@@ -99,6 +99,7 @@ header
     border-bottom: 1px solid rgba(140, 140, 140, 0.4);
     width: 100%;
     position: fixed;
+    z-index: 1000;
     /* left: 50%;
     transform: translateX(-50%); */
 }
@@ -148,7 +149,7 @@ ul.head-main-menu
     align-items: center;
     justify-content: center;
     margin: 0;
-    padding-left: 1em;
+    padding-left: 0.7em;
 }
 
 ul.head-main-menu>li
@@ -159,13 +160,12 @@ ul.head-main-menu>li
 ul.head-main-menu>li>a
 {
     display: inline-block;
-    line-height: 3.7em;
+    line-height: 3.6em;
     font-weight: bold;
     font-size: 1.1em;
     padding: 1rem;
-    padding-left: 1.5rem;
-    padding-right: 1.2rem;
-
+    padding-left: 1.8rem;
+    padding-right: 1.3rem;
     color: #eee;
 }
 
@@ -220,7 +220,7 @@ ul.head-sub-menu>li:has(ul.head-sub-menu-sub)>a::after
     /* padding-left: 0.5rem; */
     line-height: 1;
     -webkit-font-smoothing: antialiased;
-    float: right;
+    /* float: right; */
 }
 
 
@@ -279,18 +279,76 @@ ul.icon li a img:last-child
     display: none;
 }
 
+#wrap
+{
+    width: 100%;
+    height: 100vh;
+    /* background-color: rgb(192, 124, 255); */
+}
+
+.scroll
+{
+    height: 100vh;
+    padding-top: 0px;
+    position: relative;
+    top: 0%;
+    transform: translateY(0vh);
+    transition: all 700ms ease 0s;
+}
+
+
+.page
+{
+    padding-top: 10px;
+    width: 100%;
+    height: 100vh;
+}
+
+#page1
+{
+    background-image: url(https://mwpdemo12348.mycafe24.com/wp-content/uploads/2022/03/slider_1-scaled-1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#page2
+{
+    background-color: orange;
+}
+
+#page3
+{
+    background-color: red;
+}
+
+#page4
+{
+    background-color: yellow;
+}
+
+#page5
+{
+    background-color: greenyellow;
+}
+
+#page6
+{
+    background-color: aquamarine;
+}
 
 
 /* 반응형 개조 */
 
 @media (min-width: 576px)
 {
-
     nav
     {
         max-width: 540px;
     }
 }
+
+
 @media (min-width: 768px){
     ul.head-main-menu
     {
@@ -299,6 +357,9 @@ ul.icon li a img:last-child
     nav
     {
         max-width: 720px;
+    }
+    #wrap{
+        overflow: hidden;
     }
 
 }
