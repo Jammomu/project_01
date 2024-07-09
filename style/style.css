@@ -1,10 +1,14 @@
+@charset "utf-8";
 /* 
     메인 페이지
     header : fixed
     title-page : none
     top : none
+    메인 페이지 그외
+    header : absolute
+    title-page : block
+    top : block
  */
-
 .box
 {
     width: 100%;
