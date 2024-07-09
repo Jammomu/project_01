@@ -46,7 +46,7 @@ img {
     height: calc(220px + 160px + 48px);
     padding-top: 160px;
     padding-bottom: 48px;
-    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(./img/slider_1-scaled-1.jpg);
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(../img/slider_1-scaled-1.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
