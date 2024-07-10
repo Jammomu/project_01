@@ -1,75 +1,178 @@
 let pageIndex = 0;
 let maxIndex
-let scroll = $(".scroll")
-let screenOld = false
+let isMax = 0
+let scroll
+let page
+let target
+let screenOld = false;
+let newind
+let isWheel
+let btnMenu
+
+//page옵저버 생성
+const pageObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(entry => {
+        if(entry.isIntersecting)
+        {
+            $(entry.target).parent().addClass("bblk")
+
+            newind = parseInt($(entry.target).parent().attr('id').replace(/[^0-9]/g,'')) - 1
+            newind > 0 ? $(".top").hide() : $(".top").show();
+            if(!screenOld)
+            {
+                pageIndex = newind
+            }
+            // console.log(pageIndex)
+        }
+        else
+        {
+            $(entry.target).parent().removeClass("bblk")
+        }
+    });
+})
+
+const footerObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(entry => {
+        if(!entry.isIntersecting)
+        {
+            isMax = 0
+            console.log(entry.target)
+        }
+    })
+})
+
 
 $(document).ready(function () {
-    maxIndex = $(".page").length
+    page = $(".page")
+    maxIndex = page.length
     scroll = $(".scroll")
+    btnMenu = $("ul.btn-page-menu li")
+
+    for (let index = 0; index < btnMenu.length; index++) {
+        btnMenu.eq(index).click(function () {
+            pageIndex = index
+            BtnMenu()
+            movepage(pageIndex)
+        })
+    }
+
+    target = $(".target")
+    for (let index = 0; index < target.length; index++) {
+        pageObserver.observe(target.eq(index)[0])
+    }
+
+    let footer = $(".footertarget")[0]
+    footerObserver.observe(footer)
     
+
+    //메뉴 슬라이드 부분
     $("ul.head-main-menu>li:not(:first-child)").mouseover(function () {
-        // console.log($(this).children().last())
         $(this).children().last().stop().fadeIn(200)
     })
     $("ul.head-main-menu>li:not(:first-child)").mouseleave(function () {
-        // console.log($(this).children().last())
         $(this).children().last().stop().fadeOut(200)
     })
 
     $("ul.head-sub-menu>li:has(ul.head-sub-menu-sub)").mouseover(function () {
-        // console.log($(this).children().last())
         $(this).children().last().stop().fadeIn(200)
     })
     $("ul.head-sub-menu>li:has(ul.head-sub-menu-sub)").mouseleave(function () {
-        // console.log($(this).children().last())
         $(this).children().last().stop().fadeOut(200)
     })
-
-    // setInterval(() => {
-    //     pageIndex < maxIndex - 1 ? pageIndex++ : pageIndex = 0
-    //     console.log({"transform":`translate3d(0px, calc( 0px - ${pageIndex}00vh), 0px)`})
-    //     $(".scroll").css({"transform":`translate3d(0px, calc( 0px - ${pageIndex}00vh), 0px)`})
-    //     location.href = `#page${pageIndex+1}`
-    // }, 2000);
 
     $( window ).resize(function() {
         if($( window ).width() < 768)
         {
-            scroll.css({"transform":`translate3d(0px, 0vh, 0px)`})
+            scroll.css({"transition":"none","transform":`translateY( calc( -0px + -0vh ))`})
+            btnMenu.children().css({"transition":"none"})
+
+            // console.log(pageIndex , $(".page").height())
+            $('html').scrollTop(pageIndex * ($(".page").height() + 10))
             // location.href = `#page${pageIndex+1}`
-            // $('html,body').animate({scrollTop:0,scrollLeft:0},800,'swing');
+            // .animate({scrollTop: pageIndex * $("#wrap").height()},800,'swing');
             screenOld = true
+
+            // console.log(screenOld)
         }
         else
         {
             if(screenOld)
             {
-
-                scroll.removeClass("animation").css({"transform":`translate3d(0px, -${pageIndex}vh, 0px)`})
+                pageIndex = newind
+                BtnMenu()
+                scroll.css({"transform":`translateY(calc( -0px + -${pageIndex}00vh ))`})
                 
                 setTimeout(() => {
-                    scroll.addClass("animation")
+                    scroll.css({"transition":"all 700ms ease 0s"})
+                    btnMenu.children().css({"transition":"all 0.5s"})
                 }, 0);
                 screenOld = false
-                console.log(screenOld)
+                // console.log(screenOld)
             }
 
             // .removeClass("animation")
             // .addClass("animation")
             // .css({"transform":`translate3d(0px, calc(-${pageIndex}00vh - 0px), 0px)`})
         }
-    });
+    })
+
+
+    window.addEventListener("wheel", function(e){
+        
+        isWheel = parseInt(scroll.css("transform").split(',')[5]
+        .replace(/[^0-9]/g,'')) == ( pageIndex * ($(".page").height() + 10))
+         + (isMax * $("footer").height())
+        // console.log( isWheel )
+        if(screenOld || !isWheel) return;
+
+        if( e.deltaY > 0 && pageIndex < maxIndex - 1)
+        {
+            pageIndex++
+            BtnMenu()
+            movepage(pageIndex)
+        }
+        else if( e.deltaY < 0 && pageIndex > 0 && !isMax)
+        {
+            pageIndex--
+            BtnMenu()
+            movepage(pageIndex)
+        }
+        else if( e.deltaY > 0 && pageIndex < maxIndex )
+        {
+            isMax = 1
+            movepage(pageIndex)
+            // console.log( $("footer").height() ,isMax)
+        }
+        else if( e.deltaY < 0 && pageIndex > 0 && isMax)
+        {
+            isMax = 0
+            movepage(pageIndex)
+            // console.log( $("footer").height() ,isMax)
+        }
+        
+        
+    },{passive : false});
 })
 
-function movepage() {
-    console.log(pageIndex)
-    scroll.css({"transform":`translate3d(0px, -${pageIndex}00vh, 0px)`})
-    console.log(scroll)
-    
+function movepage(params) {
+
+    scroll.css({"transform":`translateY(calc( -${ isMax * $("footer").height()}px + -${params}00vh ))`})
+
+    params > 0 ? $(".top").hide() : $(".top").show();
+
+    // console.log(scroll)
+    // console.log(pageIndex)
     // location.href = `#page${pageIndex+1}`
 }
 
+function BtnMenu() {
+    for (let index = 0; index < btnMenu.length; index++) {
+        btnMenu.eq(index).removeClass("on")
+        if(index == pageIndex)
+            btnMenu.eq(index).addClass("on")
 
+    }
+}
 
 
 

@@ -96,7 +96,7 @@ ul.top-menu>li>a
 
 header
 {
-    border-bottom: 1px solid rgba(140, 140, 140, 0.4);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     width: 100%;
     position: fixed;
     z-index: 1000;
@@ -282,17 +282,15 @@ ul.icon li a img:last-child
 #wrap
 {
     width: 100%;
-    height: 100vh;
     /* background-color: rgb(192, 124, 255); */
 }
 
 .scroll
 {
-    height: 100vh;
     padding-top: 0px;
     position: relative;
     top: 0%;
-    transform: translateY(0vh);
+    transform: translateY(calc(-0vh - 0px));
     transition: all 700ms ease 0s;
 }
 
@@ -302,6 +300,26 @@ ul.icon li a img:last-child
     padding-top: 10px;
     width: 100%;
     height: 100vh;
+    position: relative;
+}
+
+.target
+{
+    position: absolute;
+    left: 50%;
+    top: 40%;
+}
+
+footer
+{
+    position: relative;
+    height: 200px;
+}
+.footertarget
+{
+    position: absolute;
+    left: 50%;
+    top: 40%;
 }
 
 #page1
@@ -311,6 +329,12 @@ ul.icon li a img:last-child
     background-position: center;
     background-size: cover;
 }
+
+
+
+
+
+
 
 #page2
 {
@@ -338,16 +362,98 @@ ul.icon li a img:last-child
 }
 
 
-/* 반응형 개조 */
 
+div.btn-menu
+{
+    position: fixed;
+    right: 0;
+    width: 100px;
+    top: 106px;
+    z-index: 12;
+    height: calc(100% - 93px);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+ul.btn-page-menu
+{
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    
+}
+ul.btn-page-menu li
+{
+    cursor: pointer;
+    height: 72px;
+    position: relative;
+}
+ul.btn-page-menu a
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    text-align: center;
+    width: 72px;
+    height: 72px;
+    /* opacity: 0; */
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    /* font-family: "Ubuntu", sans-serif; */
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transition: all 0.5s;
+    transform: translate(-50%, -50%) scale(0.5);
+}
+ul.btn-page-menu li.on a {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: #000;
+    background: #fff;
+}
+
+
+
+
+
+
+
+/* 반응형 개조 */
+@media (max-width: 576px)
+{
+    nav
+    {
+        max-width: 540px;
+    }
+    .logo
+    {
+        margin: 10px;
+    }
+    .btn-menu
+    {
+        display: none;
+    }
+}
 @media (min-width: 576px)
 {
     nav
     {
         max-width: 540px;
     }
+    .logo
+    {
+        margin: 10px;
+    }
+    .btn-menu
+    {
+        display: none;
+    }
 }
-
 
 @media (min-width: 768px){
     ul.head-main-menu
@@ -361,7 +467,18 @@ ul.icon li a img:last-child
     #wrap{
         overflow: hidden;
     }
-
+    .scroll
+    {
+        height: 100vh;
+    }
+    .logo
+    {
+        margin: 0px;
+    }
+    .btn-menu
+    {
+        display: block;
+    }
 }
 
 @media (min-width: 992px){
@@ -373,18 +490,41 @@ ul.icon li a img:last-child
     {
         display: flex;
     }
+    .logo
+    {
+        margin: 0px;
+    }
+    .btn-menu
+    {
+        display: block;
+    }
 }
 @media (min-width: 1200px){
     nav
     {
         max-width: 1140px;
     }
-
+    .logo
+    {
+        margin: 0px;
+    }
+    .btn-menu
+    {
+        display: block;
+    }
 }
 @media (min-width: 1400px){
     nav
     {
         max-width: 1320px;
+    }
+    .logo
+    {
+        margin: 0px;
+    }
+    .btn-menu
+    {
+        display: block;
     }
 }
 
