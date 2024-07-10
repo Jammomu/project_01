@@ -142,6 +142,7 @@ div.head-menu
     display: flex;
     align-items: center;
     margin: 0;
+    z-index: 2;
 }
 
 ul.head-main-menu
@@ -284,10 +285,15 @@ ul.icon li a img:last-child
 
 
 /* 반응형 개조 */
-
+@media (max-width: 710px)
+{
+    #main_title_area{
+        display: none;
+    }
+}
 @media (min-width: 576px)
 {
-
+    
     nav
     {
         max-width: 540px;
@@ -298,7 +304,7 @@ ul.icon li a img:last-child
     {
         display: flex;
     }
-    nav
+    nav,#main_title_area
     {
         max-width: 720px;
     }
@@ -306,7 +312,7 @@ ul.icon li a img:last-child
 }
 
 @media (min-width: 992px){
-    nav
+    nav,#main_title_area
     {
         max-width: 960px;
     }
@@ -316,16 +322,17 @@ ul.icon li a img:last-child
     }
 }
 @media (min-width: 1200px){
-    nav
+    nav,#main_title_area
     {
         max-width: 1140px;
     }
 
 }
 @media (min-width: 1400px){
-    nav
+    nav,#main_title_area
     {
         max-width: 1320px;
     }
+    
 }
 
