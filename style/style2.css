@@ -287,7 +287,7 @@ ul.icon li a img:last-child
 /* 반응형 개조 */
 @media (max-width: 710px)
 {
-    #main_title_area{
+    #main-title-area{
         display: none;
     }
 }
@@ -304,7 +304,7 @@ ul.icon li a img:last-child
     {
         display: flex;
     }
-    nav,#main_title_area
+    nav,#main-title-area,.main-content
     {
         max-width: 720px;
     }
@@ -312,7 +312,7 @@ ul.icon li a img:last-child
 }
 
 @media (min-width: 992px){
-    nav,#main_title_area
+    nav,#main-title-area,.main-content
     {
         max-width: 960px;
     }
@@ -322,17 +322,49 @@ ul.icon li a img:last-child
     }
 }
 @media (min-width: 1200px){
-    nav,#main_title_area
+    nav,#main-title-area,.main-content
     {
         max-width: 1140px;
     }
 
 }
 @media (min-width: 1400px){
-    nav,#main_title_area
+    nav,#main-title-area,.main-content
     {
         max-width: 1320px;
     }
     
 }
+ /* 메인타이틀 */
+#main-title-area {
+    /* max-width: 1320px; */
+    width: 100%;
+    margin: 50px auto;
+    padding: 0px 12px;
+    position: relative;
+    text-align: right;
+}
 
+.main-title {
+    position: relative;
+    color: white;
+    padding: 7px 0px;
+}
+
+#main-title1 {
+    font-size: 55px;
+    font-weight: bold;
+}
+
+#main-title2 {
+    font-size: 20px;
+}
+
+#main-title-line {
+    border-bottom: 3px solid white;
+    width: 35px;
+    left: 75%;
+    margin-top: 50px;
+    font-weight: bold;
+}
+/* ------------- */
