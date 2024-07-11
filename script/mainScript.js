@@ -6,51 +6,27 @@ let page
 let target
 let screenOld = false;
 let newind
-let isWheel
+let isWheel 
 let btnMenu
+let menuColor 
+let logo 
+// ul.btn-page-menu li::after 생성
 
-//page옵저버 생성
-const pageObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(entry => {
-        if(entry.isIntersecting)
-        {
-            $(entry.target).parent().addClass("bblk")
 
-            newind = parseInt($(entry.target).parent().attr('id').replace(/[^0-9]/g,'')) - 1
-            newind > 0 ? $(".top").hide() : $(".top").show();
-            if(!screenOld)
-            {
-                pageIndex = newind
-            }
-            // console.log(pageIndex)
-        }
-        else
-        {
-            $(entry.target).parent().removeClass("bblk")
-        }
-    });
-})
-
-const footerObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(entry => {
-        if(!entry.isIntersecting)
-        {
-            isMax = 0
-            console.log(entry.target)
-        }
-    })
-})
 
 
 $(document).ready(function () {
+    scroll = $(".scroll")
     page = $(".page")
     maxIndex = page.length
-    scroll = $(".scroll")
     btnMenu = $("ul.btn-page-menu li")
+    logo = $(".logo img")
+    menuColor = $("ul.head-main-menu>li>a")
 
     for (let index = 0; index < btnMenu.length; index++) {
         btnMenu.eq(index).click(function () {
             pageIndex = index
+            isMax = 0
             BtnMenu()
             movepage(pageIndex)
         })
@@ -110,6 +86,9 @@ $(document).ready(function () {
                 // console.log(screenOld)
             }
 
+            
+            BtnMenu()
+            movepage(pageIndex)
             // .removeClass("animation")
             // .addClass("animation")
             // .css({"transform":`translate3d(0px, calc(-${pageIndex}00vh - 0px), 0px)`})
@@ -119,10 +98,10 @@ $(document).ready(function () {
 
     window.addEventListener("wheel", function(e){
         
-        isWheel = parseInt(scroll.css("transform").split(',')[5]
-        .replace(/[^0-9]/g,'')) == ( pageIndex * ($(".page").height() + 10))
-         + (isMax * $("footer").height())
-        // console.log( isWheel )
+        isWheel = parseFloat(scroll.css("transform").split(',')[5]
+        .replace(/[^0-9.]/g,'')) == ( pageIndex * ($(".page").height() + 10))
+         + (isMax * $("footer").height().toFixed(2))
+        console.log( isWheel )
         if(screenOld || !isWheel) return;
 
         if( e.deltaY > 0 && pageIndex < maxIndex - 1)
@@ -140,12 +119,14 @@ $(document).ready(function () {
         else if( e.deltaY > 0 && pageIndex < maxIndex )
         {
             isMax = 1
+            BtnMenu()
             movepage(pageIndex)
             // console.log( $("footer").height() ,isMax)
         }
         else if( e.deltaY < 0 && pageIndex > 0 && isMax)
         {
             isMax = 0
+            BtnMenu()
             movepage(pageIndex)
             // console.log( $("footer").height() ,isMax)
         }
@@ -155,26 +136,77 @@ $(document).ready(function () {
 })
 
 function movepage(params) {
-
     scroll.css({"transform":`translateY(calc( -${ isMax * $("footer").height()}px + -${params}00vh ))`})
-
     params > 0 ? $(".top").hide() : $(".top").show();
-
+    color(params)
     // console.log(scroll)
     // console.log(pageIndex)
     // location.href = `#page${pageIndex+1}`
 }
 
 function BtnMenu() {
+    
     for (let index = 0; index < btnMenu.length; index++) {
+        
         btnMenu.eq(index).removeClass("on")
         if(index == pageIndex)
+        {
             btnMenu.eq(index).addClass("on")
+            if(isMax)
+            {
+                btnMenu.eq(index).removeClass("on")
+            }
+        }
 
     }
 }
 
+function color(params) {
+    if( params == 0 || params == 3)
+    {
+        btnMenu.parent().removeClass("on")
+        logo.attr("src", "./img/logo_white.png")
+        menuColor.css("color","#eee")
+    }
+    else
+    {
+        btnMenu.parent().addClass("on")
+        logo.attr("src", "./img/logo_black-1.png")
+        menuColor.css("color","#333")
+    }
+}
 
+//page옵저버 생성
+const pageObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(entry => {
+        if(entry.isIntersecting)
+        {
+            $(entry.target).parent().addClass("bblk")
 
+            newind = parseInt($(entry.target).parent().attr('id').replace(/[^0-9]/g,'')) - 1
+            newind > 0 ? $(".top").hide() : $(".top").show();
+            color(newind)
+            if(!screenOld)
+            {
+                pageIndex = newind
+            }
+            console.log(pageIndex)
+        }
+        else
+        {
+            $(entry.target).parent().removeClass("bblk")
+        }
+    });
+})
+
+const footerObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(entry => {
+        if(!entry.isIntersecting)
+        {
+            isMax = 0
+            console.log(entry.target)
+        }
+    })
+})
 
 
