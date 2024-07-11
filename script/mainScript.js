@@ -11,8 +11,9 @@ let btnMenu
 let menuColor 
 let logo 
 // ul.btn-page-menu li::after 생성
-
-
+let slide_1  
+let slide_2 
+// let slideBtn
 
 
 $(document).ready(function () {
@@ -22,6 +23,26 @@ $(document).ready(function () {
     btnMenu = $("ul.btn-page-menu li")
     logo = $(".logo img")
     menuColor = $("ul.head-main-menu>li>a")
+    slide_1 = $(".slide01")
+    slide_2 = $(".slide02")
+    // slideBtn = $(".slide-btn li") .filter(":not(:animated)")
+
+    $(".slide-btn li:first-child").click(function () {
+        $(".slide01")
+        slide_1.stop().fadeIn(500)
+        slide_2.stop().fadeOut(500)
+        $(this).addClass("on")
+        $(this).siblings().removeClass("on")
+    })
+    $(".slide-btn li:last-child").click(function () {
+        slide_1.stop().fadeOut(500)
+        slide_2.stop().fadeIn(500)
+
+        $(this).addClass("on")
+        $(this).siblings().removeClass("on")
+    })
+
+
 
     for (let index = 0; index < btnMenu.length; index++) {
         btnMenu.eq(index).click(function () {
@@ -86,7 +107,7 @@ $(document).ready(function () {
                 // console.log(screenOld)
             }
 
-            
+
             BtnMenu()
             movepage(pageIndex)
             // .removeClass("animation")
@@ -98,10 +119,10 @@ $(document).ready(function () {
 
     window.addEventListener("wheel", function(e){
         
-        isWheel = parseFloat(scroll.css("transform").split(',')[5]
+        isWheel = $("html").width() > 768 && parseFloat(scroll.css("transform").split(',')[5]
         .replace(/[^0-9.]/g,'')) == ( pageIndex * ($(".page").height() + 10))
          + (isMax * $("footer").height().toFixed(2))
-        console.log( isWheel )
+        // console.log( isWheel )
         if(screenOld || !isWheel) return;
 
         if( e.deltaY > 0 && pageIndex < maxIndex - 1)
@@ -181,30 +202,43 @@ const pageObserver = new IntersectionObserver(function (entries) {
     entries.forEach(entry => {
         if(entry.isIntersecting)
         {
-            $(entry.target).parent().addClass("bblk")
+            // console.log(entry.intersectionRatio)
+            if(entry.intersectionRatio > 0.99)
+            {
+                $(entry.target).parent().addClass("animate")
+            }
+            // 
 
-            newind = parseInt($(entry.target).parent().attr('id').replace(/[^0-9]/g,'')) - 1
-            newind > 0 ? $(".top").hide() : $(".top").show();
-            color(newind)
+
+            if(entry.intersectionRatio > 0.5)
+            {
+                newind = parseInt($(entry.target).parent().attr('id').replace(/[^0-9]/g,'')) - 1
+                newind > 0 ? $(".top").hide() : $(".top").show();
+                color(newind)
+            }
+
+
             if(!screenOld)
             {
                 pageIndex = newind
+                color(pageIndex)
             }
-            console.log(pageIndex)
+            // console.log(pageIndex)
+
         }
         else
         {
-            $(entry.target).parent().removeClass("bblk")
+            $(entry.target).parent().removeClass("animate")
         }
     });
-})
+}, {threshold : [0, 0.5, 1] })
 
 const footerObserver = new IntersectionObserver(function (entries) {
     entries.forEach(entry => {
         if(!entry.isIntersecting)
         {
             isMax = 0
-            console.log(entry.target)
+            // console.log(entry.target)
         }
     })
 })
