@@ -25,37 +25,6 @@
         });
     }
 </script>
-<script>
-    function slide(e) {
-        // 클래스가 "scroll_on"인 모든 요소를 선택합니다.
-        const $counters = $(e);
-
-        // 노출 비율(%)과 애니메이션 반복 여부(true/false)를 설정합니다.
-        const exposurePercentage = 100; // ex) 스크롤 했을 때 $counters 컨텐츠가 화면에 100% 노출되면 숫자가 올라갑니다.
-        const loop = true; // 애니메이션 반복 여부를 설정합니다. (true로 설정할 경우, 요소가 화면에서 사라질 때 다시 숨겨집니다.)
-
-        // 윈도우의 스크롤 이벤트를 모니터링합니다.
-        $(window).on('scroll', function () {
-            // 각 "scroll_on" 클래스를 가진 요소에 대해 반복합니다.
-            $counters.each(function () {
-                const $el = $(this);
-
-                // 요소의 위치 정보를 가져옵니다.
-                const rect = $el[0].getBoundingClientRect();
-                const winHeight = window.innerHeight; // 현재 브라우저 창의 높이
-                const contentHeight = rect.bottom - rect.top; // 요소의 높이
-
-                // 요소가 화면에 특정 비율만큼 노출될 때 처리합니다.
-                if (rect.top <= winHeight - (contentHeight * exposurePercentage /
-                        100) && rect.bottom >= (contentHeight * exposurePercentage /
-                        100)) {
-                    $el.addClass('active');
-                }
-                // 요소가 화면에서 완전히 사라졌을 때 처리합니다.
-            });
-        }).scroll();
-    };
-</script>
 
 <body>
     <div id="wrap">
@@ -196,86 +165,6 @@
             <!-- 메인타이틀 끝 -->
         </div>
         <!-- 메인 내비 시작 -->
-        <style>
-            .main-content {
-                width: 100%;
-                height: 2000px;
-                margin: 0 auto;
-                padding: 0px 12px;
-                position: relative;
-            }
-
-            .main-section {
-                float: right;
-            }
-
-            .main-nav {
-                width: 300px;
-                height: 700px;
-                float: left;
-            }
-
-            .main-nav-index {
-                position: relative;
-                width: 100%;
-                height: 100%;
-                top: -190px;
-                padding: 0;
-            }
-
-            .main-nav-box {
-                position: relative;
-                width: 100%;
-                height: 80px;
-                top: 150px;
-                display: block;
-            }
-
-            a.main-nav-title {
-                width: 300px;
-                height: 150px;
-                position: absolute;
-                background-color: rgb(62 28 106 / 90%);
-                color: white;
-                font-weight: bold;
-                font-size: 2rem;
-                text-align: center;
-                display: block;
-            }
-
-            .main-nav-box>a {
-                padding: 1.2rem;
-                margin-bottom: 2px;
-                font-size: 1rem;
-            }
-
-            .main-nav-hidden {
-                margin-top: 15px;
-                position: relative;
-                height: 160px;
-                width: 100%;
-            }
-
-            .hidden {
-                display: none;
-                height: 50px;
-            }
-
-            .this-page {
-                color: #676ba7;
-                border: 3px solid #676ba7;
-            }
-
-            .nav-main>a {
-                font-size: 20px;
-            }
-
-            .not-select>a {
-                width: 100%;
-                height: 97%;
-                background-color: #f1f1f1;
-            }
-        </style>
         <div class="main-content">
             <div class="main-nav">
                 <ul class="main-nav-index">
@@ -296,67 +185,13 @@
                     <li class="main-nav-box nav-main not-select"><a href="#">오시는길</a></li>
                 </ul>
 
-                <script>
-                    $(function () {
-                        $('#nav-second').hover(function () {
-                            $('.hidden').css('display', 'block');
-                        }, function () {
-                            $('.hidden').css('display', 'none');
-                        });
-                    });
 
-                    $(function () {
-                        $('.main-nav-box>').hover(function () {
-                            $(this).css('color', '#676ba7');
-                        }, function () {
-                            $(this).css('color', 'black');
-                            $('#this-page').css('color', '#676ba7');
-                        });
-                    });
-                    $(function () {
-                        $('.not-select').hover(function () {
-                            $(this).css('border', '3px solid #676ba7');
-                        }, function () {
-                            $(this).css('border', '');
-                        });
-                    });
-                </script>
 
             </div>
             <!-- 메인 내비 끝 -->
 
             <!-- breadcrumb시작 -->
-            <style>
-                .breadcrumb {
-                    margin-top: 40px;
-                    width: 500px;
-                    position: relative;
-                    left: 50%;
-                }
 
-                .breadcrumb>ul {
-                    overflow: hidden;
-                }
-
-                .breadcrumb>ul>li {
-                    float: left;
-                }
-
-                .breadcrumb>ul>li>a>img {
-                    position: relative;
-                    top: -5px;
-                }
-
-                .breadcrumb>ul>li>img {
-                    position: relative;
-                    top: -5px;
-                }
-
-                #home {
-                    position: relative;
-                    top: -3px;
-                }
-            </style>
             <div class="breadcrumb">
                 <ul class="breadcrumb_content">
                     <li class="breadcrumb_item home"><a href="https://mwpdemo12348.mycafe24.com/"><img id="home"
@@ -374,43 +209,7 @@
 
             <!-- 메인 내용 시작 -->
             <style>
-                .main-section {
-                    float: right;
-                    position: relative;
-                    width: 900px;
-                    height: 100%;
-                }
 
-                .content_header {
-                    left: 100px;
-                    position: relative;
-                    opacity: 0;
-                    transition: all 1s;
-                }
-
-                .content_header.active {
-                    opacity: 1 !important;
-                    transform: translate(-100px, 0) !important;
-                }
-
-                .content_section {
-                    top: 450px;
-                    left: 500px;
-                    position: relative;
-                    opacity: 0;
-                    transition: all 1s;
-                    width: 450px;
-                }
-
-                .content_section.active {
-                    opacity: 1 !important;
-                    transform: translate(0, -100) !important;
-                }
-
-                .content {
-                    width: 100%;
-                    height: 100%;
-                }
             </style>
             <div class="main-section">
                 <div class="content">
@@ -433,15 +232,7 @@
                 </div>
 
             </div>
-            <script>
-                $(function () {
-                    slide('.content_header');
-                });
 
-                $(function () {
-                    slide('.content_section');
-                });
-            </script>
             <!-- 메인 내용 끝 -->
         </div>
 
