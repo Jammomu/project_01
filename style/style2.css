@@ -54,7 +54,8 @@ img {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    display: block;
+    overflow: hidden;
+    
 }
 
 
@@ -291,6 +292,7 @@ ul.icon li a img:last-child
         display: none;
     }
 }
+
 @media (min-width: 576px)
 {
     
@@ -366,5 +368,156 @@ ul.icon li a img:last-child
     left: 75%;
     margin-top: 50px;
     font-weight: bold;
+
 }
-/* ------------- */
+/* 서브페이지의 메인 내비 */
+.main-content {
+    width: 100%;
+    height: 2000px;
+    margin: 0 auto;
+    padding: 0px 12px;
+    position: relative;
+}
+
+.main-section {
+    float: right;
+}
+
+.main-nav {
+    width: 300px;
+    height: 700px;
+    float: left;
+}
+
+.main-nav-index {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: -190px;
+    padding: 0;
+}
+
+.main-nav-box {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    top: 150px;
+    display: block;
+}
+
+a.main-nav-title {
+    width: 300px;
+    height: 150px;
+    position: absolute;
+    background-color: rgb(62 28 106 / 90%);
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+    display: block;
+}
+
+.main-nav-box>a {
+    padding: 1.2rem;
+    margin-bottom: 2px;
+    font-size: 1rem;
+}
+
+.main-nav-hidden {
+    margin-top: 15px;
+    position: relative;
+    height: 160px;
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+    height: 50px;
+}
+
+.this-page {
+    color: #676ba7;
+    border: 3px solid #676ba7;
+}
+
+.nav-main>a {
+    font-size: 20px;
+}
+
+.not-select>a {
+    width: 100%;
+    height: 97%;
+    background-color: #f1f1f1;
+}
+/* 서브페이지의 메인 내비 */
+ /* breadcrumb시작 */
+ .breadcrumb {
+    margin-top: 40px;
+    width: 500px;
+    position: relative;
+    left: 50%;
+}
+
+.breadcrumb>ul {
+    overflow: hidden;
+}
+
+.breadcrumb>ul>li {
+    float: left;
+}
+
+.breadcrumb>ul>li>a>img {
+    position: relative;
+    top: -5px;
+}
+
+.breadcrumb>ul>li>img {
+    position: relative;
+    top: -5px;
+}
+
+#home {
+    position: relative;
+    top: -3px;
+}
+ /* breadcrumb끝 */
+ 
+/* 서브페이지1-1-1 메인내용 */
+ .main-section {
+    float: right;
+    position: relative;
+    width: 900px;
+    height: 100%;
+}
+
+.content_header {
+    left: 100px;
+    position: relative;
+    opacity: 0;
+    transition: all 1s;
+}
+
+.content_header.active {
+    opacity: 1 !important;
+    transform: translate(-100px, 0) !important;
+}
+
+.content_section {
+    top: 450px;
+    left: 500px;
+    position: relative;
+    opacity: 0;
+    transition: all 1s;
+    width: 450px;
+}
+
+.content_section.active {
+    opacity: 1 !important;
+    transform: translate(0, -100) !important;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+}
+/* 서브페이지1-1-1 메인내용 */
