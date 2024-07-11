@@ -373,7 +373,7 @@ ul.icon li a img:last-child
 /* 서브페이지의 메인 내비 */
 .main-content {
     width: 100%;
-    height: 1300px;
+    height: 1000px;
     margin: 0 auto;
     padding: 0px 12px;
     position: relative;
@@ -487,7 +487,7 @@ a.main-nav-title {
     float: right;
     position: relative;
     width: 900px;
-    height: 100%;
+    height: 600px;
 }
 
 .content_header {
@@ -521,3 +521,50 @@ a.main-nav-title {
     height: 100%;
 }
 /* 서브페이지1-1-1 메인내용 */
+/* 서브페이지1-1-3 메인내용시작*/
+.main-content-section {
+    width: 100%;
+    height: 100%;
+    margin-top: 00px;
+}
+
+.thirdpage-left-content {
+    float: left;
+    width: 300px;
+    margin-top: 50px;
+    opacity: 0;
+    transition: all 1s;
+    left: 100px;
+    position: relative;
+
+}
+
+.thirdpage-left-content.active {
+    opacity: 1 !important;
+    transform: translate(-100px, 0) !important;
+}
+
+.thirdpage-left-content>h4 {
+    font-size: 30px;
+
+}
+
+.thirdpage-right-content {
+    position: relative;
+    float: right;
+    width: 600px;
+    margin-top: 50px;
+    opacity: 0;
+    transition: all 3s;
+    left: 100px;
+}
+
+.thirdpage-right-content.active {
+    opacity: 1 !important;
+    transform: translate(-100px, 0) !important;
+}
+
+.thirdpage-right-content>p {
+    font-size: 16px;
+}
+/* 서브페이지1-1-3 메인내용끝 */
