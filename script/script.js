@@ -14,6 +14,15 @@ $(function () {
         $(this).children().last().stop().fadeOut(200)
     })
 })
+// 메인 내비
+$(function () {
+    $('.head-sub-menu-hover').hover(function () {
+        $(this).css('color', '#676ba7');
+    }, function () {
+        $(this).css('color', 'black');
+    });
+});
+// 메인 내비 끝
 //  서브페이지 메인내비
 $(function () {
     $('#nav-second').hover(function () {
