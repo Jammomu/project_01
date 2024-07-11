@@ -14,7 +14,7 @@
     <script>
         function includeHTML(ctrl, page, callback) {
             $.get(page, function(data) {
-                $(ctrl).html(data);
+                $('#' + ctrl).html(data);
                 if (callback) {
                     callback();
                 }
@@ -29,19 +29,36 @@
             width: 1400px;
             margin: 0 auto;
             padding: 20px;
+            padding-left: 60px;
         }
 
         /* 왼쪽 메뉴 전체 스타일 */
-        #leftMenuZone{
-            width: 23%;
+        #main-content{
+            width: 20%;
             float: left;
         }
 
         /* 왼쪽 메뉴 세부 스타일 */
-        ul#head-sub-menu > li{
+        a.main-nav-title {
+            width: 300px;
+            height: 150px;
+            position: absolute;
+            background-color: rgb(62 28 106 / 90%);
+            color: white;
+            font-weight: bold;
+            font-size: 2rem;
+            text-align: center;
+            display: block;
+        }
+
+        .main-nav-box{
+            margin-top: 20px;
+        }
+
+        .main-nav > li{
             padding: 10px;
         }
-        ul#head-sub-menu > li > a{
+        .main-nav > li > a{
             padding: 20px 25px;
             border: 3px solid #f1f1f1;
             background-color: #f1f1f1;
@@ -64,7 +81,7 @@
 
     <!-- 왼쪽 메뉴 이벤트 스타일 -->
     <style>
-        #head-sub-menu > li > a:hover{
+        .main-nav > li > a:hover{
             background-color: #fff;
             border: 3px solid #676BA7;
             color: #676BA7;
@@ -76,7 +93,7 @@
         #head-sub-menu-sub2 > li > a:hover{
             color: #676BA7;
         }
-        #head-sub-menu > li > a.active{
+        .main-nav > li > a.active{
             background-color: #fff;
             border: 3px solid #676BA7;
             color: #676BA7;
@@ -121,53 +138,71 @@
             margin-top: 50px;
         }
 
-        #content_paragraph{
-            opacity: 0; /* 초기 상태를 투명하게 설정 */
-            transition: opacity 2.5s; /* 페이드 인/아웃 애니메이션 */
-        }
-        #content_paragraph.fade-in {
-            opacity: 1; /* 페이드 인 상태 */
-        }
-
-        #content_paragraph.fade-out {
-            opacity: 0; /* 페이드 아웃 상태 */
-        }
-
-        #whiteBox{
+        .whiteBox{
             width: 30%;
             height: 170px;
             margin-bottom: 80px;
             border: 1px solid #ddd;
-            /* margin-bottom: 10%; */
             justify-content: right;
             align-items: end;
             float: left;
-            /* display: none; */
         }
-        #boxInfo{
+        .boxInfo{
             width: 190px;
             padding: 20px;
             background-color: #000;
             color: #fff;
-            /* float: left; */
         }
-        #boxInfo > h6{
+        .boxInfo > h6{
             font-size: 16px;
         }
         #boxInfo > p{
             color: #aaa;
         }
-        #content_menu_txt{
+        .content_menu_txt{
             width: 60%;
             margin-left: 60px;
-            /* display: block; */
             float: right;
             margin-bottom: 60px;
         }
-        #content_menu_txt > h3{
+        .content_menu_txt > h3{
             font-weight: 600;
         }
     </style>
+
+    <!-- 컨텐츠 이벤트 스타일 -->
+    <style>
+        #content_menu{
+            opacity: 0; /* 초기 상태를 투명하게 설정 */
+            transition: opacity 2.5s; /* 페이드 인/아웃 애니메이션 */
+        }
+        #content_menu.fade-in {
+            opacity: 1; /* 페이드 인 상태 */
+        }
+
+        #content_menu.fade-out {
+            opacity: 0; /* 페이드 아웃 상태 */
+        }
+    </style>
+    
+    <!-- 이벤트 스크립트 -->
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            fadeIn();
+        });
+
+        function fadeIn(){
+            const element = document.getElementById('content_menu');
+            element.classList.remove('fade-out');
+            element.classList.add('fade-in');
+        }
+
+        function fadeOut(){
+            const element = document.getElementById('content_menu');
+            element.classList.remove('fade-in');
+            element.classList.add('fade-out');
+        }
+    </script>
 </head>
 <body>
     <div id="wrap">
@@ -288,7 +323,14 @@
             <div class="head-toggle-menu"></div>
 
         </header>
-        <div class="title-page"></div>
+        <div class="title-page">
+            <div id="main-title-area">
+                <h1 id="main-title1" class="main-title">Electronic Data Research Cent<border
+                        style="border-top: 3px solid white;">er</border>
+                </h1>
+                <h3 id="main-title2" class="main-title">EDRC는 대한민국의 데이터 산업의 기틀을 마련하기 위한 기틀을 마련합니다</h3>
+            </div>
+        </div>
     </div>
     <!-- 상단영역 끝 -->
          
@@ -296,29 +338,22 @@
     <div id="productSurvice">
 
         <!-- 왼쪽 메뉴 -->
-        <div id="leftMenuZone">
-            <!-- <div id="left_nav">
-                <div id="left_nav_title">
-                    <h1><a href="#">제품서비스</a></h1>
-                </div>
-            </div> -->
-
-            <ul id="head-sub-menu">
-                <li>
-                    <a href="#" class="sub_menu_title1 active">서비스소개 +</a>
-                        <ul id="head-sub-menu-sub1">
-                            <li class="sub_menu_li"><a href="#"> 서비스소개 스타일1 </a></li>
-                            <li class="sub_menu_li"><a href="#"> 서비스소개 스타일2 </a></li>
-                            <li class="sub_menu_li"><a href="#"> 서비스소개 스타일3 </a></li>
-                        </ul>
-                </li>
-                <li>
-                    <a href="#" class="sub_menu_title2">제품안내 +</a>
-                        <ul id="head-sub-menu-sub2">
-                            <li class="sub_menu_li"><a href="#"> 제품안내 스타일1 </a></li>
-                        </ul>
-                </li>
-            </ul>
+        <div id="main-content">
+            <div class="main-nav">
+                <ul class="main-nav-index">
+                    <a href="#" class="main-nav-title"><br>제품서비스</a>
+                    <ul style="margin: 0; padding: 0;">
+                        <li class="main-nav-box this-page nav-main"><a href="#">서비스소개 +</a></li>
+                        <li class="main-nav-box"><a id="this-page" href="#" style="color: #676ba7;">서비스소개 스타일1</a></li>
+                        <li class="main-nav-box"><a href="#">서비스소개 스타일2</a></li>
+                        <li class="main-nav-box"><a href="#">서비스소개 스타일3</a></li>
+                    </ul>
+                    <ul id="nav-second" style="margin: 0; padding: 0    ;">
+                        <li class="main-nav-box nav-main not-select"><a href="#">제품안내 +</a></li>
+                        <li class="main-nav-box hidden"><a href="#">제품안내 스타일1</a></li>
+                    </ul>
+                </ul>
+            </div>
         </div>
 
         <!-- 컨텐츠존 -->
@@ -337,18 +372,18 @@
             <div id="content_menu">
 
                 <!-- 컨텐츠 메뉴1 -->
-                <div id="content_paragraph">
+                <div class="content_paragraph">
                     <!-- 컨텐츠 왼쪽 상자 -->
-                    <div id="whiteBox">
+                    <div class="whiteBox">
                         <a href="#">
-                            <div id="boxInfo">
+                            <div class="boxInfo">
                                 <h6>영국 SILVERTOWN</h6>
                                 <p>2032.08.28</p>
                             </div>
                         </a>
                     </div>
                     <!-- 컨텐츠 우측 텍스트 -->
-                    <div id="content_menu_txt">
+                    <div class="content_menu_txt">
                         <h3>ECO Business</h3>
                         <p>Resource Circularity를 기반으로 한 3R (Reduce : 소각ㆍ매립, Reuse : 수처리, Recycle : Wasted Material) 중심의 Waste to Resource 사업을 실행하는 종합 환경 Platform으로 성장을 지속하고 있습니다.</p>
                         <ul>
@@ -359,39 +394,39 @@
                 </div>
                 
                 <!-- 컨텐츠 메뉴2 -->
-                <div id="content_paragraph">
+                <div class="content_paragraph">
                     <!-- 컨텐츠 왼쪽 상자 -->
-                    <div id="whiteBox">
+                    <div class="whiteBox">
                         <a href="#">
-                            <div id="boxInfo">
+                            <div class="boxInfo">
                                 <h6>싱가포르 JAC</h6>
                                 <p>2032.08.28</p>
                             </div>
                         </a>
                     </div>
                     <!-- 컨텐츠 우측 텍스트 -->
-                    <div id="content_menu_txt">
+                    <div class="content_menu_txt">
                         <h3>환경기초시설</h3>
                         <p>각은 폐기물의 부피를 감소시키고, 유해성을 안정화시키는 가장 직접적인 방법입니다. 소각을 통해 버려지는 폐기물을 저감하고, 환경을 위한 에너지로 전환하고 있습니다. 지역 주민에게 냉난방과 전기를 공급하고 있으며, 엄격한 오염물질의 관리를 통해 지역 사회의 신뢰성을 구축하고 있습니다.</p>
                         <ul>
-                            <li>상세보기 <img src="" alt=""></li>
+                            <li>상세보기</li>
                         </ul>
                     </div>
                 </div>
                 
                 <!-- 컨텐츠 메뉴3 -->
-                <div id="content_paragraph">
+                <div class="content_paragraph">
                     <!-- 컨텐츠 왼쪽 상자 -->
-                    <div id="whiteBox">
+                    <div class="whiteBox">
                         <a href="#">
-                            <div id="boxInfo">
+                            <div class="boxInfo">
                                 <h6>인도네시아 L프로젝트</h6>
                                 <p>2032.08.28</p>
                             </div>
                         </a>
                     </div>
                     <!-- 컨텐츠 우측 텍스트 -->
-                    <div id="content_menu_txt">
+                    <div class="content_menu_txt">
                         <h3>EMC 사업영역</h3>
                         <p>시설에 대한 장기적인 관리 관점에서 잠재적인 영향성을 차단하고, 미래 세대를 위해 지역 환경을 안전하게 보존하고 있습니다. 매립 폐기물의 적정 처리와 관리 시스템을 통해 폐기물의 친환경적 자원 순환을 선도하겠습니다.</p>
                         <ul>
@@ -402,24 +437,24 @@
                 </div>
                 
                 <!-- 컨텐츠 메뉴4 -->
-                <div id="content_paragraph">
+                <div class="content_paragraph">
                     <!-- 컨텐츠 왼쪽 상자 -->
-                    <div id="whiteBox">
+                    <div class="whiteBox">
                         <a href="#">
-                            <div id="boxInfo">
+                            <div class="boxInfo">
                                 <h6>영월 연료전지 1단계</h6>
                                 <p>2032.08.28</p>
                             </div>
                         </a>
                     </div>
                     <!-- 컨텐츠 우측 텍스트 -->
-                    <div id="content_menu_txt">
+                    <div class="content_menu_txt">
                         <h3>OTO Platform</h3>
                         <p>업전략과 연계된 R&D 전략을 수립하고 친환경 기술/정책/시장 동향을 분석하여 R&D 포트폴리오를 구축하고 있으며, 요소기술에 대한 기술/시장 분석을 토대로 기술로드맵을 수립하고 있습니다.</p>
                         <ul>
                             <li>SV11 Power Tower 1 Project</li>
                             <li>2020.12 ~ 2021.12</li>
-                            <li>규모 – 4.0MW</li>
+                            <li>규모 - 4.0MW</li>
                         </ul>
                     </div>
                 </div>
@@ -427,46 +462,5 @@
         </div>
     </div>
 
-    <!-- 이벤트 스크립트 -->
-    <script>
-        // $(function(){
-        //     $('.sub_menu_title1').hover(function(){
-        //             $('#head-sub-menu-sub1 > li').css('display', 'block');
-        //         },
-        //         function(){
-        //             $('#head-sub-menu-sub2 > li').css('display', 'none');
-        //         }
-        //     );
-        //     $('.sub_menu_title2').hover(function(){
-        //             $('#head-sub-menu-sub2 > li').css('display', 'block');
-        //         },
-        //         function(){
-        //             $('#head-sub-menu-sub2 > li').css('display', 'none');
-        //         }
-        //     );
-        //     $('.sub_menu_li').hover(function(){
-        //             $(this).css('color', '#676ba7');
-        //         },
-        //         function(){
-        //             $(this).css('color', '#000');
-        //         }
-        //     );
-        // });
-        document.addEventListener('DOMContentLoaded', (event) => {
-            fadeIn();
-        });
-
-        function fadeIn(){
-            const element = document.getElementById('content_paragraph');
-            element.classList.remove('fade-out');
-            element.classList.add('fade-in');
-        }
-
-        function fadeOut(){
-            const element = document.getElementById('content_paragraph');
-            element.classList.remove('fade-in');
-            element.classList.add('fade-out');
-        }
-    </script>
 </body>
 </html>
