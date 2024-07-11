@@ -48,32 +48,41 @@
             /* border: 2px solid #f55; */
             margin-bottom: 30px;
         }
-        ul#head-sub-menu-sub{
-            display: block;
-        }
-        #head-sub-menu-sub > li{
+        #head-sub-menu-sub1 > li{
             list-style-image: url('./img/list_style_circle_on.png');
             font-size: 13px;
             margin: 10px;
-            display: block;
+            /* display: none; */
         }
+        #head-sub-menu-sub2 > li{
+            list-style-image: url('./img/list_style_circle_on.png');
+            font-size: 13px;
+            margin: 10px;
+            /* display: none; */
+        }
+    </style>
 
-        /* 왼쪽 메뉴 이벤트 스타일 */
+    <!-- 왼쪽 메뉴 이벤트 스타일 -->
+    <style>
         #head-sub-menu > li > a:hover{
             background-color: #fff;
             border: 3px solid #676BA7;
             color: #676BA7;
+            display: block;
         }
-        #head-sub-menu-sub > li{
-            display: none;
+        #head-sub-menu-sub1 > li > a:hover{
+            color: #676BA7;
         }
-        #head-sub-menu-sub > li > a:hover{
+        #head-sub-menu-sub2 > li > a:hover{
             color: #676BA7;
         }
         #head-sub-menu > li > a.active{
             background-color: #fff;
             border: 3px solid #676BA7;
             color: #676BA7;
+            display: block;
+        }
+        #head-sub-menu-sub1:active{
             display: block;
         }
     </style>
@@ -112,16 +121,28 @@
             margin-top: 50px;
         }
 
+        #content_paragraph{
+            opacity: 0; /* 초기 상태를 투명하게 설정 */
+            transition: opacity 2.5s; /* 페이드 인/아웃 애니메이션 */
+        }
+        #content_paragraph.fade-in {
+            opacity: 1; /* 페이드 인 상태 */
+        }
+
+        #content_paragraph.fade-out {
+            opacity: 0; /* 페이드 아웃 상태 */
+        }
+
         #whiteBox{
             width: 30%;
             height: 170px;
+            margin-bottom: 80px;
             border: 1px solid #ddd;
             /* margin-bottom: 10%; */
-            display: flex;
             justify-content: right;
             align-items: end;
             float: left;
-            margin-bottom: 60px;
+            /* display: none; */
         }
         #boxInfo{
             width: 190px;
@@ -273,6 +294,7 @@
          
     <!-- 제품 서비스 페이지 -->
     <div id="productSurvice">
+
         <!-- 왼쪽 메뉴 -->
         <div id="leftMenuZone">
             <!-- <div id="left_nav">
@@ -282,17 +304,19 @@
             </div> -->
 
             <ul id="head-sub-menu">
-                <li><a href="#" class="active">서비스소개</a>
-                    <ul id="head-sub-menu-sub">
-                        <li><a href="#"> 서비스소개 스타일1 </a></li>
-                        <li><a href="#"> 서비스소개 스타일2 </a></li>
-                        <li><a href="#"> 서비스소개 스타일3 </a></li>
-                    </ul>
+                <li>
+                    <a href="#" class="sub_menu_title1 active">서비스소개 +</a>
+                        <ul id="head-sub-menu-sub1">
+                            <li class="sub_menu_li"><a href="#"> 서비스소개 스타일1 </a></li>
+                            <li class="sub_menu_li"><a href="#"> 서비스소개 스타일2 </a></li>
+                            <li class="sub_menu_li"><a href="#"> 서비스소개 스타일3 </a></li>
+                        </ul>
                 </li>
-                <li><a href="#">제품안내</a>
-                    <ul id="head-sub-menu-sub">
-                        <li><a href="#"> 제품안내 스타일1 </a></li>
-                    </ul>
+                <li>
+                    <a href="#" class="sub_menu_title2">제품안내 +</a>
+                        <ul id="head-sub-menu-sub2">
+                            <li class="sub_menu_li"><a href="#"> 제품안내 스타일1 </a></li>
+                        </ul>
                 </li>
             </ul>
         </div>
@@ -402,5 +426,47 @@
             </div>
         </div>
     </div>
+
+    <!-- 이벤트 스크립트 -->
+    <script>
+        // $(function(){
+        //     $('.sub_menu_title1').hover(function(){
+        //             $('#head-sub-menu-sub1 > li').css('display', 'block');
+        //         },
+        //         function(){
+        //             $('#head-sub-menu-sub2 > li').css('display', 'none');
+        //         }
+        //     );
+        //     $('.sub_menu_title2').hover(function(){
+        //             $('#head-sub-menu-sub2 > li').css('display', 'block');
+        //         },
+        //         function(){
+        //             $('#head-sub-menu-sub2 > li').css('display', 'none');
+        //         }
+        //     );
+        //     $('.sub_menu_li').hover(function(){
+        //             $(this).css('color', '#676ba7');
+        //         },
+        //         function(){
+        //             $(this).css('color', '#000');
+        //         }
+        //     );
+        // });
+        document.addEventListener('DOMContentLoaded', (event) => {
+            fadeIn();
+        });
+
+        function fadeIn(){
+            const element = document.getElementById('content_paragraph');
+            element.classList.remove('fade-out');
+            element.classList.add('fade-in');
+        }
+
+        function fadeOut(){
+            const element = document.getElementById('content_paragraph');
+            element.classList.remove('fade-in');
+            element.classList.add('fade-out');
+        }
+    </script>
 </body>
 </html>
