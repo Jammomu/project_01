@@ -711,6 +711,11 @@ p{
     opacity: 1;
 }
 
+.list li
+{
+    float: left;
+}
+
 #page3
 {
     background-color: #fff;
