@@ -435,11 +435,6 @@ a.main-nav-title {
     height: 50px;
 }
 
-.this-page {
-    color: #676ba7;
-    border: 3px solid #676ba7;
-}
-
 .nav-main>a {
     font-size: 20px;
 }
@@ -449,6 +444,11 @@ a.main-nav-title {
     height: 97%;
     background-color: #f1f1f1;
 }
+.this-page {
+    color: #676ba7;
+    border: 3px solid #676ba7;
+}
+
 /* 서브페이지의 메인 내비 */
  /* breadcrumb시작 */
  .breadcrumb {
@@ -521,3 +521,82 @@ a.main-nav-title {
     height: 100%;
 }
 /* 서브페이지1-1-1 메인내용 */
+/* 서브페이지1-1-2 메인내용시작*/
+.main-content{
+    height: 1800px;
+}
+.first-content-section-wrap {
+    position: relative;
+    height: 600px;
+    width: 900px;
+}
+
+.first-content-section {
+    position: absolute;
+    margin-top: 100px;
+    background-color: black;
+    height: 600px;
+    width: 900px;
+    opacity: 0;
+    transition: all 1s;
+    left: 100px;
+    margin: 50px 0 0 0;
+}
+
+.first-content-section.active {
+    opacity: 1 !important;
+    transform: translate(-100px, 0) !important;
+}
+
+.first-content-section>h1 {
+    position: relative;
+    margin: 160px 0px 0px 40px;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.first-content-section>p {
+    font-size: 20px;
+    color: white;
+    margin: 50px 40px 30px 40px;
+}
+
+#first-content-border-box {
+    position: relative;
+    right: 20px;
+    bottom: 150px;
+    border-right: 5px solid white;
+    height: 200px;
+}
+
+.second-content-section>h6 {
+    color: #333;
+}
+
+.second-content-section {
+    position: relative;
+    width: 900px;
+    height: 300px;
+    opacity: 0;
+    transition: all 1s;
+    left: 100px;
+}
+
+.second-content-section.active {
+    opacity: 1 !important;
+    transform: translate(-100px, 0) !important;
+}                
+.third-content-section {
+    position: relative;
+    width: 900px;
+    height: 300px;
+    opacity: 0;
+    transition: all 1s;
+    left: 100px;
+}
+
+.third-content-section.active {
+    opacity: 1 !important;
+    transform: translate(-100px, 0) !important;
+}
+/* 서브페이지1-1-2 메인내용끝 */
