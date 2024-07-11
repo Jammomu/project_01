@@ -16,7 +16,14 @@ $(function () {
 })
 // 메인 내비
 $(function () {
-    $('.head-sub-menu-hover').hover(function () {
+    $('.head-sub-menu>li>a').hover(function () {
+        $(this).css('color', '#676ba7');
+    }, function () {
+        $(this).css('color', 'black');
+    });
+});
+$(function () {
+    $('.head-sub-menu>li>ul>li>a').hover(function () {
         $(this).css('color', '#676ba7');
     }, function () {
         $(this).css('color', 'black');
