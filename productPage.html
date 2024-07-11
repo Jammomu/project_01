@@ -178,36 +178,69 @@
 
     <!-- 컨텐츠 이벤트 스타일 -->
     <style>
+        /* 
         #content_menu{
-            opacity: 0; /* 초기 상태를 투명하게 설정 */
-            transition: opacity 2.5s; /* 페이드 인/아웃 애니메이션 */
+            opacity: 0; /* 초기 상태를 투명하게 설정
+            transition: opacity 2.5s; /* 페이드 인/아웃 애니메이션
         }
         #content_menu.fade-in {
-            opacity: 1; /* 페이드 인 상태 */
+            opacity: 1; /* 페이드 인 상태
         }
 
         #content_menu.fade-out {
-            opacity: 0; /* 페이드 아웃 상태 */
+            opacity: 0; /* 페이드 아웃 상태
+        }
+        */
+        
+        .content_paragraph {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .content_paragraph.visible {
+            opacity: 1;
         }
     </style>
     
     <!-- 이벤트 스크립트 -->
     <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            fadeIn();
+        // document.addEventListener('DOMContentLoaded', (event) => {
+        //     fadeIn();
+        // });
+
+        // function fadeIn(){
+        //     const element = document.getElementById('content_menu');
+        //     element.classList.remove('fade-out');
+        //     element.classList.add('fade-in');
+        // }
+
+        // function fadeOut(){
+        //     const element = document.getElementById('content_menu');
+        //     element.classList.remove('fade-in');
+        //     element.classList.add('fade-out');
+        // }
+        
+        document.addEventListener("DOMContentLoaded", () => {
+            const items = document.querySelectorAll('.content_paragraph');
+
+            const observerOptions = {
+                threshold: 0.1 // 요소가 10% 보일 때 트리거
+            };
+
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // 한 번만 트리거되도록 관찰 해제
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            items.forEach(item => {
+                observer.observe(item);
+            });
         });
-
-        function fadeIn(){
-            const element = document.getElementById('content_menu');
-            element.classList.remove('fade-out');
-            element.classList.add('fade-in');
-        }
-
-        function fadeOut(){
-            const element = document.getElementById('content_menu');
-            element.classList.remove('fade-in');
-            element.classList.add('fade-out');
-        }
     </script>
 </head>
 <body>
@@ -354,7 +387,7 @@
                         <li class="main-nav-box"><a href="#">서비스소개 스타일2</a></li>
                         <li class="main-nav-box"><a href="#">서비스소개 스타일3</a></li>
                     </ul>
-                    <ul id="nav-second" style="margin: 0; padding: 0    ;">
+                    <ul id="nav-second" style="margin: 0; padding: 0;">
                         <li class="main-nav-box nav-main not-select"><a href="#">제품안내 +</a></li>
                         <li class="main-nav-box hidden"><a href="#">제품안내 스타일1</a></li>
                     </ul>
@@ -379,7 +412,6 @@
 
                 <!-- 컨텐츠 메뉴1 -->
                 <div class="content_paragraph">
-
                     <!-- 컨텐츠 왼쪽 상자 -->
                     <div class="whiteBox">
                         <a href="#">

@@ -138,36 +138,19 @@
             margin-top: 50px;
         }
 
-        .whiteBox{
-            width: 30%;
-            height: 170px;
-            margin-bottom: 80px;
-            border: 1px solid #ddd;
-            display: flex;
-            justify-content: right;
-            align-items: end;
-            float: left;
-            position: relative;
+        .content_paragraph{
+            width: 100%;
+            margin-bottom: 50px;
+            float: right;
         }
-        .boxInfo{
-            width: 190px;
-            padding: 20px 20px 10px 20px;
-            margin-left: -200px;
-            margin-top: -70px;
-            background-color: #000;
-            color: #fff;
-            position: absolute;
-            align-items: center;
+        .content_paragraph img{
+            width: 100px;
+            transform: translateY(50%);
         }
-        .boxInfo > h6{
-            font-size: 16px;
-        }
-        .boxInfo > p{
-            color: #aaa;
-        }
+
         .txt_style2{
             width: 80%;
-            margin: 0 80px 60px 30px;
+            margin-right: 70px;
             float: right;
         }
         .txt_style2 > h3{
@@ -192,36 +175,49 @@
 
     <!-- 컨텐츠 이벤트 스타일 -->
     <style>
-        #content_menu{
-            opacity: 0; /* 초기 상태를 투명하게 설정 */
-            transition: opacity 2.5s; /* 페이드 인/아웃 애니메이션 */
-        }
-        #content_menu.fade-in {
-            opacity: 1; /* 페이드 인 상태 */
+        .content_paragraph {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
         }
 
-        #content_menu.fade-out {
-            opacity: 0; /* 페이드 아웃 상태 */
+        .content_paragraph.visible {
+            opacity: 1;
         }
     </style>
     
     <!-- 이벤트 스크립트 -->
     <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            fadeIn();
+        // document.addEventListener("DOMContentLoaded", () => {
+        //     const items = document.querySelectorAll('.content_paragraph');
+        //     items.forEach((item, index) => {
+        //         setTimeout(() => {
+        //             item.classList.add('visible');
+        //         }, index * 500); // 500ms 간격으로 fade-in
+        //     });
+        // });
+        
+        document.addEventListener("DOMContentLoaded", () => {
+            const items = document.querySelectorAll('.content_paragraph');
+
+            const observerOptions = {
+                threshold: 0.1 // 요소가 10% 보일 때 트리거
+            };
+
+            const observerCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // 한 번만 트리거되도록 관찰 해제
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+            items.forEach(item => {
+                observer.observe(item);
+            });
         });
-
-        function fadeIn(){
-            const element = document.getElementById('content_menu');
-            element.classList.remove('fade-out');
-            element.classList.add('fade-in');
-        }
-
-        function fadeOut(){
-            const element = document.getElementById('content_menu');
-            element.classList.remove('fade-in');
-            element.classList.add('fade-out');
-        }
     </script>
 </head>
 <body>
@@ -393,11 +389,53 @@
 
                 <!-- 컨텐츠 메뉴1 -->
                 <div class="content_paragraph">
-
                     <!-- 컨텐츠 왼쪽 사진 -->
-                    <div>
-                        <img src="none" alt="">
+                    <img src="img/home.png" alt="">
+                    <!-- 컨텐츠 우측 텍스트 -->
+                    <div class="content_menu_txt txt_style2">
+                        <h3>업무인테리어</h3>
+                        <p>국내 최초의 인텔리전트 빌딩인 연세재단 빌딩을 건설하면서 오피스 시장의 강자로 떠오른 대우건설은 산업은행 본점과 강남역의 랜드마크인 서초 교보타워 등을 건설하며 명성을 쌓았습니다. 또한 국내 최대 규모 오피스인 옛 대우센터 빌딩을 리모델링, 최첨단 시설을 갖춘 서울스퀘어로 재탄생시켰습니다.</p>
+                        <div>
+                            <button class="btn01">상세보기</button>
+                            <button class="btn01">브로슈</button>
+                        </div>
                     </div>
+                </div>
+
+                <!-- 컨텐츠 메뉴2 -->
+                <div class="content_paragraph">
+                    <!-- 컨텐츠 왼쪽 사진 -->
+                    <img src="img/home.png" alt="">
+                    <!-- 컨텐츠 우측 텍스트 -->
+                    <div class="content_menu_txt txt_style2">
+                        <h3>업무인테리어</h3>
+                        <p>국내 최초의 인텔리전트 빌딩인 연세재단 빌딩을 건설하면서 오피스 시장의 강자로 떠오른 대우건설은 산업은행 본점과 강남역의 랜드마크인 서초 교보타워 등을 건설하며 명성을 쌓았습니다. 또한 국내 최대 규모 오피스인 옛 대우센터 빌딩을 리모델링, 최첨단 시설을 갖춘 서울스퀘어로 재탄생시켰습니다.</p>
+                        <div>
+                            <button class="btn01">상세보기</button>
+                            <button class="btn01">브로슈</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 컨텐츠 메뉴3 -->
+                <div class="content_paragraph">
+                    <!-- 컨텐츠 왼쪽 사진 -->
+                    <img src="img/home.png" alt="">
+                    <!-- 컨텐츠 우측 텍스트 -->
+                    <div class="content_menu_txt txt_style2">
+                        <h3>업무인테리어</h3>
+                        <p>국내 최초의 인텔리전트 빌딩인 연세재단 빌딩을 건설하면서 오피스 시장의 강자로 떠오른 대우건설은 산업은행 본점과 강남역의 랜드마크인 서초 교보타워 등을 건설하며 명성을 쌓았습니다. 또한 국내 최대 규모 오피스인 옛 대우센터 빌딩을 리모델링, 최첨단 시설을 갖춘 서울스퀘어로 재탄생시켰습니다.</p>
+                        <div>
+                            <button class="btn01">상세보기</button>
+                            <button class="btn01">브로슈</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 컨텐츠 메뉴4 -->
+                <div class="content_paragraph">
+                    <!-- 컨텐츠 왼쪽 사진 -->
+                    <img src="img/home.png" alt="">
                     <!-- 컨텐츠 우측 텍스트 -->
                     <div class="content_menu_txt txt_style2">
                         <h3>업무인테리어</h3>
