@@ -119,7 +119,7 @@ $(document).ready(function () {
 
     window.addEventListener("wheel", function(e){
         
-        isWheel = parseFloat(scroll.css("transform").split(',')[5]
+        isWheel = $("html").width() > 768 && parseFloat(scroll.css("transform").split(',')[5]
         .replace(/[^0-9.]/g,'')) == ( pageIndex * ($(".page").height() + 10))
          + (isMax * $("footer").height().toFixed(2))
         // console.log( isWheel )
@@ -202,19 +202,26 @@ const pageObserver = new IntersectionObserver(function (entries) {
     entries.forEach(entry => {
         if(entry.isIntersecting)
         {
-            console.log(entry.intersectionRatio)
+            // console.log(entry.intersectionRatio)
             if(entry.intersectionRatio > 0.99)
             {
                 $(entry.target).parent().addClass("animate")
             }
             // 
 
-            newind = parseInt($(entry.target).parent().attr('id').replace(/[^0-9]/g,'')) - 1
-            newind > 0 ? $(".top").hide() : $(".top").show();
-            color(newind)
+
+            if(entry.intersectionRatio > 0.5)
+            {
+                newind = parseInt($(entry.target).parent().attr('id').replace(/[^0-9]/g,'')) - 1
+                newind > 0 ? $(".top").hide() : $(".top").show();
+                color(newind)
+            }
+
+
             if(!screenOld)
             {
                 pageIndex = newind
+                color(pageIndex)
             }
             // console.log(pageIndex)
 
@@ -224,7 +231,7 @@ const pageObserver = new IntersectionObserver(function (entries) {
             $(entry.target).parent().removeClass("animate")
         }
     });
-}, {threshold : [0, 0.1, 1] })
+}, {threshold : [0, 0.5, 1] })
 
 const footerObserver = new IntersectionObserver(function (entries) {
     entries.forEach(entry => {

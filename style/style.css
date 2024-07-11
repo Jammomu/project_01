@@ -314,11 +314,11 @@ ul.icon li a img:last-child
 .target
 {
     position: absolute;
-    left: 5%;
+    left: 0%;
     top: 5%;
     /* background-color: #000; */
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 95%;
 }
 
 footer
