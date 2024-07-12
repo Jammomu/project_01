@@ -304,6 +304,7 @@ ul.icon li a img:last-child
     outline: none;
     z-index: 100;
     margin: 0 auto;
+    padding: 0 12px;
 }
 /* 헤드 부분 */
 
