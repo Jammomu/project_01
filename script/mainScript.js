@@ -220,7 +220,14 @@ const pageObserver = new IntersectionObserver(function (entries) {
                 $(entry.target).parent().addClass("animate")
             }
             // 
+            
+            if($("html").width() < 768)
+            {
+                if(entry.intersectionRatio > 0.5)
+                    $(entry.target).parent().addClass("animate")
 
+                console.log(entry.intersectionRatio)
+            }
 
             if(entry.intersectionRatio > 0.5)
             {
@@ -232,6 +239,7 @@ const pageObserver = new IntersectionObserver(function (entries) {
                     newind > 0 ? $(".top").hide() : $(".top").show();
                 }
             }
+            
 
 
             if(!screenOld)
@@ -246,7 +254,7 @@ const pageObserver = new IntersectionObserver(function (entries) {
             $(entry.target).parent().removeClass("animate")
         }
     });
-}, {threshold : [0, 0.5, 0.7,1] })
+}, {threshold : [0, 0.1, 0.2, 0.3, 0.5, 0.7, 0.8, 0.9,1] })
 
 const footerObserver = new IntersectionObserver(function (entries) {
     entries.forEach(entry => {
