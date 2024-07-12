@@ -11,6 +11,7 @@ let btnMenu
 let menuColor 
 let logo 
 let icon
+let head
 // ul.btn-page-menu li::after 생성
 let slide_1  
 let slide_2 
@@ -25,6 +26,7 @@ $(document).ready(function () {
     logo = $(".logo img")
     icon = $(".icon li img")
     menuColor = $("ul.head-main-menu>li>a")
+    head = $("header")
     slide_1 = $(".slide01")
     slide_2 = $(".slide02")
     // slideBtn = $(".slide-btn li") .filter(":not(:animated)")
@@ -121,9 +123,11 @@ $(document).ready(function () {
 
     window.addEventListener("wheel", function(e){
         
-        isWheel = $("html").width() > 768 && parseFloat(scroll.css("transform").split(',')[5]
-        .replace(/[^0-9.]/g,'')) == ( pageIndex * ($(".page").height() + 10))
-         + (isMax * $("footer").height().toFixed(2))
+        isWheel = $("html").width() > 768 && 
+        parseFloat(scroll.css("transform").split(',')[5]
+        .replace(/[^0-9.]/g,'')).toFixed(0) == 
+        parseFloat((pageIndex * ($(".page").height() + 10))
+         + (isMax * $("footer").height().toFixed(1))).toFixed(0)    
         // console.log( isWheel )
         if(screenOld || !isWheel) return;
 
@@ -191,6 +195,7 @@ function color(params) {
         logo.attr("src", "./img/logo_white.png")
         icon.eq(0).attr("src", "https://mwpdemo12348.mycafe24.com/wp-content/themes/ktheme_biz_fabric/images/icon_search.svg")
         icon.eq(1).attr("src", "https://mwpdemo12348.mycafe24.com/wp-content/themes/ktheme_biz_fabric/images/icon_full_menu.svg")
+        head.css("background-color", "rgba(255,255,255, 0)")
         menuColor.css("color","#eee")
     }
     else
@@ -200,6 +205,7 @@ function color(params) {
         icon.eq(0).attr("src", "https://mwpdemo12348.mycafe24.com/wp-content/themes/ktheme_biz_fabric/images/icon_search_black.svg")
         icon.eq(1).attr("src", "https://mwpdemo12348.mycafe24.com/wp-content/themes/ktheme_biz_fabric/images/icon_full_menu_black.svg")
         menuColor.css("color","#333")
+        head.css("background-color", "rgba(255,255,255, 1)")
     }
 }
 
@@ -209,7 +215,7 @@ const pageObserver = new IntersectionObserver(function (entries) {
         if(entry.isIntersecting)
         {
             // console.log(entry.intersectionRatio)
-            if(entry.intersectionRatio > 0.99)
+            if(entry.intersectionRatio > 0.7)
             {
                 $(entry.target).parent().addClass("animate")
             }
@@ -219,12 +225,11 @@ const pageObserver = new IntersectionObserver(function (entries) {
             if(entry.intersectionRatio > 0.5)
             {
                 newind = parseInt($(entry.target).parent().attr('id').replace(/[^0-9]/g,'')) - 1
-                newind > 0 ? $(".top").hide() : $(".top").show();
 
                 if($("html").width() < 768)
                 {
                     color(newind)
-                    console.log('color')
+                    newind > 0 ? $(".top").hide() : $(".top").show();
                 }
             }
 
@@ -241,7 +246,7 @@ const pageObserver = new IntersectionObserver(function (entries) {
             $(entry.target).parent().removeClass("animate")
         }
     });
-}, {threshold : [0, 0.5, 1] })
+}, {threshold : [0, 0.5, 0.7,1] })
 
 const footerObserver = new IntersectionObserver(function (entries) {
     entries.forEach(entry => {
