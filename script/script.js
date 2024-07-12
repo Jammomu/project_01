@@ -94,3 +94,15 @@ $(function () {
 // 서브페이지 1-1-2 메인내용
 
 //슬라이드
+// 검색바
+let searchToggle = false
+$(function(){
+    $(".head-search").hide()
+    
+
+    $(".icon li:first-child").click(function(){
+        searchToggle ? $(".head-search").hide() : $(".head-search").show()
+        searchToggle = !searchToggle
+    });
+});
+// 검색바

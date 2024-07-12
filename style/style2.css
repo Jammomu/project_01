@@ -307,6 +307,30 @@ ul.icon li a img:last-child
     padding: 0 12px;
 }
 /* 헤드 부분 */
+/* 검색바 */
+.head-search {
+
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    text-align: right;
+    display: none;
+}
+.head-search-bar {
+    position: relative;
+    font-size: 1.8rem;
+    line-height: 5rem;  
+    width: 100%;
+    text-indent: 2rem;
+    transition: all 0.5s;
+    text-align: right;
+    height: 100%;
+    padding-right: 20%;
+    border: 0px;
+    outline: none;
+    z-index: 100;
+}
+/* 검색바 */
 
 
 /* 반응형 개조 */
@@ -655,3 +679,56 @@ p{
 }
 
 /* 푸터 */
+/* 반응형 개조 */
+@media (max-width: 710px)
+{
+    #main-title-area{
+        display: none;
+    }
+}
+
+@media (min-width: 576px)
+{
+    
+    nav
+    {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px){
+    ul.head-main-menu
+    {
+        display: flex;
+    }
+    nav,#main-title-area,.main-content,.footer-wrap
+    {
+        max-width: 720px;
+    }
+
+}
+
+@media (min-width: 992px){
+    nav,#main-title-area,.main-content,.footer-wrap
+    {
+        max-width: 960px;
+    }
+    ul.icon
+    {
+        display: flex;
+    }
+}
+@media (min-width: 1200px){
+    nav,#main-title-area,.main-content,.footer-wrap
+    {
+        max-width: 1140px;
+    }
+
+}
+@media (min-width: 1400px){
+    nav,#main-title-area,.main-content,.footer-wrap
+    {
+        max-width: 1320px;
+    }
+    
+}
+
