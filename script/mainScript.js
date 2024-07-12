@@ -162,7 +162,6 @@ function movepage(params) {
     scroll.css({"transform":`translateY(calc( -${ isMax * $("footer").height()}px + -${params}00vh ))`})
     params > 0 ? $(".top").hide() : $(".top").show();
     color(params)
-    console.log("color")
     // console.log(scroll)
     // console.log(pageIndex)
     // location.href = `#page${pageIndex+1}`
@@ -224,7 +223,6 @@ const pageObserver = new IntersectionObserver(function (entries) {
                 if($("html").width() < 768)
                 {
                     color(newind)
-                    console.log("color")
                 }
 
             }
