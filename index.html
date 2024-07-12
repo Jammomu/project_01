@@ -117,11 +117,11 @@
                         <ul class="icon">
                             <li><a id="search" href="#"> 
                                 <img src="https://mwpdemo12348.mycafe24.com/wp-content/themes/ktheme_biz_fabric/images/icon_search.svg" alt=""> 
-                                <img src="https://mwpdemo12348.mycafe24.com/wp-content/themes/ktheme_biz_fabric/images/icon_search_black.svg" alt="">
+                                <!-- _black -->
                             </a></li>
                             <li><a href="#"> 
                                 <img src="https://mwpdemo12348.mycafe24.com/wp-content/themes/ktheme_biz_fabric/images/icon_full_menu.svg" alt="">
-                                <img src="https://mwpdemo12348.mycafe24.com/wp-content/themes/ktheme_biz_fabric/images/icon_full_menu_black.svg" alt="">
+                                <!-- _black -->
                             </a></li>
                         </ul>
                         <!-- 아이콘영역 끝 -->
@@ -138,9 +138,24 @@
             <!-- 헤드영역 끝 -->
 
             <!-- 검색 시작 -->
-            <div class="head-search"> 
+            <style>
+
+            </style>
+            <div class="head-search">
                 <input class="head-search-bar" type="text" name="s" placeholder="검색하기 ">
             </div>
+            <script>
+                let searchToggle = false
+                $(function(){
+                    $(".head-search").hide()
+                    
+
+                    $(".icon li:first-child").click(function(){
+                        searchToggle ? $(".head-search").hide() : $(".head-search").show()
+                        searchToggle = !searchToggle
+                    });
+                });
+            </script>
                 
             <!-- 토글메뉴 시작 -->
             <div class="head-toggle-menu"></div>
