@@ -712,3 +712,27 @@ p{
 }
 
 /* 푸터 */
+/* 검색바 */
+.head-search {
+
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    text-align: right;
+    display: none;
+}
+.head-search-bar {
+    position: relative;
+    font-size: 1.8rem;
+    line-height: 5rem;  
+    width: 100%;
+    text-indent: 2rem;
+    transition: all 0.5s;
+    text-align: right;
+    height: 100%;
+    padding-right: 20%;
+    border: 0px;
+    outline: none;
+    z-index: 100;
+}
+/* 검색바 */

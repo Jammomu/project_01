@@ -259,3 +259,16 @@ $(function () {
 });
 // 메인 내비 끝
 
+//검색바
+$(function(){
+    $('#search').click(function(){
+        if($('.head-search').css('display')=='none'){
+            $('.head-search').show()
+        }
+        else{
+            $('.head-search').hide()
+
+        }
+    });
+});
+// 검색바
