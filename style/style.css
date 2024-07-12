@@ -105,7 +105,7 @@ header
 {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     width: 100%;
-    position: absolute;
+    position: fixed;
     z-index: 1000;
     /* left: 50%;
     transform: translateX(-50%); */
@@ -281,11 +281,6 @@ ul.icon li:first-child a
 ul.icon li:last-child a 
 {
     padding-left: 16px;
-}
-
-ul.icon li a img:last-child
-{
-    display: none;
 }
 .head-search {
 
