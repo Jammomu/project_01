@@ -29,6 +29,7 @@ body
     word-wrap: keep-all;
 }
 
+/* 헤드 부분 */
 *{
     margin: 0;
     padding: 0;
@@ -104,7 +105,7 @@ header
 {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     width: 100%;
-    position: fixed;
+    position: absolute;
     z-index: 1000;
     /* left: 50%;
     transform: translateX(-50%); */
@@ -286,6 +287,30 @@ ul.icon li a img:last-child
 {
     display: none;
 }
+.head-search {
+
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    text-align: center;
+    display: block;
+}
+
+.head-search-bar {
+    font-size: 1.8rem;
+    line-height: 5rem;  
+    width: 100%;
+    text-indent: 2rem;
+    /* transition: all 0.5s; */
+    text-align: right;
+    height: 100%;
+    border: 0px;
+    outline: none;
+    z-index: 100;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+/* 헤드 부분 */
 
 #wrap
 {
@@ -295,6 +320,7 @@ ul.icon li a img:last-child
 
 .scroll
 {
+    width: 100%;
     padding-top: 0px;
     position: relative;
     top: 0%;
@@ -320,6 +346,8 @@ ul.icon li a img:last-child
     width: 100%;
     height: 95%;
 }
+
+
 
 footer
 {
@@ -427,6 +455,7 @@ p{
 {
     color: #00b900;
 }
+
 
 
 
@@ -694,6 +723,21 @@ p{
 #page2
 {
     background-color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.company
+{
+    opacity: 1;
+}
+
+.list li
+{
+    float: left;
 }
 
 #page3
@@ -834,7 +878,7 @@ ul.btn-page-menu.on li::after
 }
 @media (min-width: 576px)
 {
-    nav, .footer-wrap, .container
+    nav, .footer-wrap, .container, .head-search-bar
     {
         max-width: 540px;
     }
@@ -889,7 +933,7 @@ ul.btn-page-menu.on li::after
     {
         display: flex;
     }
-    nav, .footer-wrap, .container
+    nav, .footer-wrap, .container, .head-search-bar
     {
         max-width: 720px;
     }
@@ -932,7 +976,7 @@ ul.btn-page-menu.on li::after
 }
 
 @media (min-width: 992px){
-    nav, .footer-wrap, .container
+    nav, .footer-wrap, .container, .head-search-bar
     {
         max-width: 960px;
     }
@@ -960,7 +1004,7 @@ ul.btn-page-menu.on li::after
     } */
 }
 @media (min-width: 1200px){
-    nav, .footer-wrap, .container
+    nav, .footer-wrap, .container, .head-search-bar
     {
         max-width: 1140px;
     }
@@ -975,7 +1019,7 @@ ul.btn-page-menu.on li::after
     }
 }
 @media (min-width: 1400px){
-    nav, .footer-wrap, .container
+    nav, .footer-wrap, .container, .head-search-bar
     {
         max-width: 1320px;
     }

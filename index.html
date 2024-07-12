@@ -10,7 +10,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style/style.css">
     <script src="./script/mainScript.js"></script>
-    <script src="./script/script.js"></script>
 
     <script>
         function includeHTML(ctrl, page, callback) {
@@ -139,7 +138,24 @@
             <!-- 헤드영역 끝 -->
 
             <!-- 검색 시작 -->
-            <div class="head-search"></div>
+            <style>
+
+            </style>
+            <div class="head-search">
+                <input class="head-search-bar" type="text" name="s" placeholder="검색하기 ">
+            </div>
+            <script>
+                let searchToggle = false
+                $(function(){
+                    $(".head-search").hide()
+                    
+
+                    $(".icon li:first-child").click(function(){
+                        searchToggle ? $(".head-search").hide() : $(".head-search").show()
+                        searchToggle = !searchToggle
+                    });
+                });
+            </script>
                 
             <!-- 토글메뉴 시작 -->
             <div class="head-toggle-menu"></div>
@@ -242,7 +258,43 @@
                 <!-- page2 시작 -->
                 <div id="page2" class="page">
                     <div class="target"></div>
-                    <h1>page2</h1>
+                    <div class="company">
+
+                        <div>
+                            <h1>Company</h1>
+                        </div>
+                        <h6>
+                            미래산업의 중심은 소재개발에서 시작합니다
+                        </h6>
+
+                        <ul class="list">
+                            <li>
+                                <div class="item">
+                                    <div class="txtbox">
+                                        <i class="bi bi-bricks text-white"></i>
+                                        <h5>미래소재중심 <br> 연구개발</h5>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item">
+                                    <div class="txtbox">
+                                        <i class="bi bi-gem text-dark"></i>
+                                        <h5>미래소재중심 <br> 연구개발</h5>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item">
+                                    <div class="txtbox">
+                                        <i class="bi bi-sun text-white"></i>
+                                        <h5>미래소재중심 <br> 연구개발</h5>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
                 <!-- page2 끝 -->
 
