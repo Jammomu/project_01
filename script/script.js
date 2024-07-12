@@ -94,16 +94,15 @@ $(function () {
 // 서브페이지 1-1-2 메인내용
 
 //슬라이드
-//검색바
+// 검색바
+let searchToggle = false
 $(function(){
-    $('#search').click(function(){
-        if($('.head-search').css('display')=='none'){
-            $('.head-search').show()
-        }
-        else{
-            $('.head-search').hide()
+    $(".head-search").hide()
+    
 
-        }
+    $(".icon li:first-child").click(function(){
+        searchToggle ? $(".head-search").hide() : $(".head-search").show()
+        searchToggle = !searchToggle
     });
 });
 // 검색바

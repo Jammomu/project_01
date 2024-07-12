@@ -10,7 +10,6 @@ let isWheel
 let btnMenu
 let menuColor 
 let logo 
-let icon
 // ul.btn-page-menu li::after 생성
 let slide_1  
 let slide_2 
@@ -23,7 +22,6 @@ $(document).ready(function () {
     maxIndex = page.length
     btnMenu = $("ul.btn-page-menu li")
     logo = $(".logo img")
-    icon = $("ul.icon li a img")
     menuColor = $("ul.head-main-menu>li>a")
     slide_1 = $(".slide01")
     slide_2 = $(".slide02")
@@ -162,7 +160,6 @@ function movepage(params) {
     scroll.css({"transform":`translateY(calc( -${ isMax * $("footer").height()}px + -${params}00vh ))`})
     params > 0 ? $(".top").hide() : $(".top").show();
     color(params)
-    console.log("color")
     // console.log(scroll)
     // console.log(pageIndex)
     // location.href = `#page${pageIndex+1}`
@@ -190,16 +187,12 @@ function color(params) {
     {
         btnMenu.parent().removeClass("on")
         logo.attr("src", "./img/logo_white.png")
-        icon.eq(0).attr("src", "https://mwpdemo12348.mycafe24.com/wp-content/themes/ktheme_biz_fabric/images/icon_search.svg")
-        icon.eq(1).attr("src", "https://mwpdemo12348.mycafe24.com/wp-content/themes/ktheme_biz_fabric/images/icon_full_menu.svg")
         menuColor.css("color","#eee")
     }
     else
     {
         btnMenu.parent().addClass("on")
         logo.attr("src", "./img/logo_black-1.png")
-        icon.eq(0).attr("src", "https://mwpdemo12348.mycafe24.com/wp-content/themes/ktheme_biz_fabric/images/icon_search_black.svg")
-        icon.eq(1).attr("src", "https://mwpdemo12348.mycafe24.com/wp-content/themes/ktheme_biz_fabric/images/icon_full_menu_black.svg")
         menuColor.css("color","#333")
     }
 }
@@ -221,19 +214,14 @@ const pageObserver = new IntersectionObserver(function (entries) {
             {
                 newind = parseInt($(entry.target).parent().attr('id').replace(/[^0-9]/g,'')) - 1
                 newind > 0 ? $(".top").hide() : $(".top").show();
-                if($("html").width() < 768)
-                {
-                    color(newind)
-                    console.log("color")
-                }
-
+                color(newind)
             }
 
 
             if(!screenOld)
             {
                 pageIndex = newind
-                // color(pageIndex)
+                color(pageIndex)
             }
             // console.log(pageIndex)
 
@@ -271,16 +259,15 @@ $(function () {
 });
 // 메인 내비 끝
 
-//검색바
+// 검색바
+let searchToggle = false
 $(function(){
-    $('#search').click(function(){
-        if($('.head-search').css('display')=='none'){
-            $('.head-search').show()
-        }
-        else{
-            $('.head-search').hide()
+    $(".head-search").hide()
+    
 
-        }
+    $(".icon li:first-child").click(function(){
+        searchToggle ? $(".head-search").hide() : $(".head-search").show()
+        searchToggle = !searchToggle
     });
 });
 // 검색바
