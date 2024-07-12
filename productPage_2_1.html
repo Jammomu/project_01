@@ -116,7 +116,8 @@
 
         /* 컨텐츠 타이틀 스타일 */
         #content_title{
-            margin: 25px 0;
+            margin-top: 25px;
+            margin-bottom: 100px;
         }
         #content_title > h2{
             font-weight: 600;
@@ -136,28 +137,44 @@
 
         /* 컨텐츠 메뉴 스타일 */
         #content_menu{
+            width: 100%;
+            height: 100%;
             margin-top: 50px;
+            position: relative;
         }
 
         .content_paragraph{
             width: 100%;
+            height: 30%;
             margin-bottom: 50px;
-            float: right;
+            border-bottom: 2px solid #000;
+            display: block;
         }
         .content_paragraph img{
-            width: 100px;
-            transform: translateY(50%);
+            width: 30%;
+            display: block;
         }
 
-        .txt_style2{
-            width: 80%;
-            margin-right: 70px;
-            float: right;
+        .txt_overline{
+            width: 20px;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #000;
         }
-        .txt_style2 > h3{
+        .txt_overline2{
+            width: 20px;
+            margin: 15px;
+            border-bottom: 3px solid #000;
+        }
+
+        .txt_style3{
+            width: 50%;
+            display: block;
+            float: left;
+        }
+        .txt_style3 > h3{
             font-weight: 600;
         }
-        .txt_style2 > p{
+        .txt_style3 > p{
             margin-bottom: 50px;
         }
 
@@ -166,11 +183,17 @@
             padding: 5px;
             padding-left: 25px;
             margin-right: 30px;
-            background-color: #222;
-            color: #fff;
+            margin-bottom: 30px;
+            background-color: #fff;
+            color: #000;
             border: 1px solid #222;
             border-radius: 25px;
             text-align: left;
+        }
+
+        .content_whiteBox{
+            width: 20%;
+            display: block;
         }
     </style>
 
@@ -180,23 +203,18 @@
             opacity: 0;
             transition: opacity 1s ease-in-out;
         }
-
         .content_paragraph.visible {
             opacity: 1;
+        }
+
+        button.btn01:hover{
+            background-color: #000;
+            color: #fff;
         }
     </style>
     
     <!-- 이벤트 스크립트 -->
     <script>
-        // document.addEventListener("DOMContentLoaded", () => {
-        //     const items = document.querySelectorAll('.content_paragraph');
-        //     items.forEach((item, index) => {
-        //         setTimeout(() => {
-        //             item.classList.add('visible');
-        //         }, index * 500); // 500ms 간격으로 fade-in
-        //     });
-        // });
-
         document.addEventListener("DOMContentLoaded", () => {
             const items = document.querySelectorAll('.content_paragraph');
 
@@ -284,9 +302,9 @@
                                             <li><a href="#"> 서비스소개 스타일3 </a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="./productPage.html"> 제품안내</a>
+                                    <li><a href="./productPage_2_1.html"> 제품안내</a>
                                         <ul class="head-sub-menu-sub">
-                                            <li><a href="#"> 제품안내 스타일1 </a></li>
+                                            <li><a href="./productPage_2_1.html"> 제품안내 스타일1 </a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -358,16 +376,16 @@
         <div id="main-content">
             <div class="main-nav">
                 <ul class="main-nav-index">
-                    <a href="#" class="main-nav-title"><br>제품서비스</a>
+                    <a href="./productPage.html" class="main-nav-title"><br>제품서비스</a>
                     <ul style="margin: 0; padding: 0;">
-                        <li class="main-nav-box this-page nav-main"><a href="./productPage.html">서비스소개 +</a></li>
-                        <li class="main-nav-box"><a  href="./productPage.html" >서비스소개 스타일1</a></li>
-                        <li class="main-nav-box"><a id="this-page" style="color: #676ba7;" href="./productPage_1_2.html">서비스소개 스타일2</a></li>
-                        <li class="main-nav-box"><a href="#">서비스소개 스타일3</a></li>
+                        <li class="main-nav-box nav-main not-select"><a href="./productPage.html">서비스소개 +</a></li>
+                        <li class="main-nav-box hidden"><a  href="./productPage.html">서비스소개 스타일1</a></li>
+                        <li class="main-nav-box hidden"><a href="./productPage_1_2.html">서비스소개 스타일2</a></li>
+                        <li class="main-nav-box hidden"><a href="#">서비스소개 스타일3</a></li>
                     </ul>
-                    <ul id="nav-second" style="margin: 0; padding: 0    ;">
-                        <li class="main-nav-box nav-main not-select"><a href="#">제품안내 +</a></li>
-                        <li class="main-nav-box hidden"><a href="#">제품안내 스타일1</a></li>
+                    <ul id="nav-second" style="margin: 0; padding: 0;">
+                        <li class="main-nav-box nav-main this-page"><a href="./productPage_2_1.html">제품안내 +</a></li>
+                        <li class="main-nav-box"><a href="./productPage_2_1.html" id="this-page" style="color: #676ba7;">제품안내 스타일1</a></li>
                     </ul>
                 </ul>
             </div>
@@ -380,73 +398,34 @@
                 <ul>
                     <li><a href="#"><img src="img/home.png" alt=""></a></li>
                     <li><a href="./productPage.html"><img src="img/arrow.png" alt=""> 제품서비스</a></li>
-                    <li><a href="./productPage.html"><img src="img/arrow.png" alt=""> 서비스소개</a></li>
-                    <li><a href="./productPage_1_2.html"><img src="img/arrow.png" alt=""> 서비스소개 스타일2</a></li>
+                    <li><a href="./productPage.html"><img src="img/arrow.png" alt=""> 제품안내</a></li>
+                    <li><a href="./productPage_1_2.html"><img src="img/arrow.png" alt=""> 제품안내 스타일2</a></li>
                 </ul>
             </div>
             <!-- 컨텐츠 타이틀 -->
-            <div id="content_title"><h2>서비스소개 스타일2</h2></div>
+            <div id="content_title"><h2>제품안내 스타일1</h2></div>
             <div id="content_menu">
-
                 <!-- 컨텐츠 메뉴1 -->
                 <div class="content_paragraph">
-                    <!-- 컨텐츠 왼쪽 사진 -->
-                    <img src="img/home.png" alt="">
-                    <!-- 컨텐츠 우측 텍스트 -->
-                    <div class="content_menu_txt txt_style2">
-                        <h3>업무인테리어</h3>
-                        <p>국내 최초의 인텔리전트 빌딩인 연세재단 빌딩을 건설하면서 오피스 시장의 강자로 떠오른 대우건설은 산업은행 본점과 강남역의 랜드마크인 서초 교보타워 등을 건설하며 명성을 쌓았습니다. 또한 국내 최대 규모 오피스인 옛 대우센터 빌딩을 리모델링, 최첨단 시설을 갖춘 서울스퀘어로 재탄생시켰습니다.</p>
+                    <!-- 컨텐츠 왼쪽 텍스트 -->
+                    <div class="content_menu_txt txt_style3">
+                        <div class="txt_overline"></div>
+                        <h3>갤럭시 Z 폴드3 5G</h3>
+                        <p>갤럭시 폴드 사상 가장 얇고 휴대성이 뛰어난 동시에, 외부와 내부 모두에 풀스크린 디스플레이를 탑재했습니다. 접으면 일반 스마트폰처럼 한 손에 쏙 들어오지만 펼치면 광활한 시야가 당신의 것이 되죠.</p>
                         <div>
-                            <button class="btn01">상세보기</button>
-                            <button class="btn01">브로슈</button>
+                            <button class="btn01">제품스팩</button>
+                            <button class="btn01">카달로그</button>
                         </div>
                     </div>
+                    <!-- 컨텐츠 오른쪽 사진 -->
+                    <img src="./img/picture_250x250.png" alt="">
                 </div>
-
-                <!-- 컨텐츠 메뉴2 -->
-                <div class="content_paragraph">
-                    <!-- 컨텐츠 왼쪽 사진 -->
-                    <img src="img/home.png" alt="">
-                    <!-- 컨텐츠 우측 텍스트 -->
-                    <div class="content_menu_txt txt_style2">
-                        <h3>업무인테리어</h3>
-                        <p>국내 최초의 인텔리전트 빌딩인 연세재단 빌딩을 건설하면서 오피스 시장의 강자로 떠오른 대우건설은 산업은행 본점과 강남역의 랜드마크인 서초 교보타워 등을 건설하며 명성을 쌓았습니다. 또한 국내 최대 규모 오피스인 옛 대우센터 빌딩을 리모델링, 최첨단 시설을 갖춘 서울스퀘어로 재탄생시켰습니다.</p>
-                        <div>
-                            <button class="btn01">상세보기</button>
-                            <button class="btn01">브로슈</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 컨텐츠 메뉴3 -->
-                <div class="content_paragraph">
-                    <!-- 컨텐츠 왼쪽 사진 -->
-                    <img src="img/home.png" alt="">
-                    <!-- 컨텐츠 우측 텍스트 -->
-                    <div class="content_menu_txt txt_style2">
-                        <h3>업무인테리어</h3>
-                        <p>국내 최초의 인텔리전트 빌딩인 연세재단 빌딩을 건설하면서 오피스 시장의 강자로 떠오른 대우건설은 산업은행 본점과 강남역의 랜드마크인 서초 교보타워 등을 건설하며 명성을 쌓았습니다. 또한 국내 최대 규모 오피스인 옛 대우센터 빌딩을 리모델링, 최첨단 시설을 갖춘 서울스퀘어로 재탄생시켰습니다.</p>
-                        <div>
-                            <button class="btn01">상세보기</button>
-                            <button class="btn01">브로슈</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 컨텐츠 메뉴4 -->
-                <div class="content_paragraph">
-                    <!-- 컨텐츠 왼쪽 사진 -->
-                    <img src="img/home.png" alt="">
-                    <!-- 컨텐츠 우측 텍스트 -->
-                    <div class="content_menu_txt txt_style2">
-                        <h3>업무인테리어</h3>
-                        <p>국내 최초의 인텔리전트 빌딩인 연세재단 빌딩을 건설하면서 오피스 시장의 강자로 떠오른 대우건설은 산업은행 본점과 강남역의 랜드마크인 서초 교보타워 등을 건설하며 명성을 쌓았습니다. 또한 국내 최대 규모 오피스인 옛 대우센터 빌딩을 리모델링, 최첨단 시설을 갖춘 서울스퀘어로 재탄생시켰습니다.</p>
-                        <div>
-                            <button class="btn01">상세보기</button>
-                            <button class="btn01">브로슈</button>
-                        </div>
-                    </div>
-                </div>
+            </div>
+            <!-- 중앙 상자들 -->
+            <div class="content_whiteBox">
+                <img src="./img/home.png" alt="">
+                <div class="txt_overline2"></div>
+                <h5>갤럭시 Z폴드3 블랙</h5>
             </div>
         </div>
     </div>
