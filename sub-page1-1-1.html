@@ -145,39 +145,18 @@
             <!-- 헤드영역 끝 -->
 
             <!-- 검색 시작 -->
-            <style>
-                .head-search {
-
-                    width: 100%;
-                    height: 80px;
-                    background-color: white;
-                    text-align: right;
-                    display: block;
-                }
-
-                .head-search-bar {
-                    font-size: 1.8rem;
-                    line-height: 5rem;  
-                    width: 100%;
-                    text-indent: 2rem;
-                    transition: all 0.5s;
-                    text-align: right;
-                    height: 100%;
-                    padding-right: 530px;
-                    border: 0px;
-                    outline: none;
-                    z-index: 100;
-                }
-            </style>
             <div class="head-search">
-
                 <input class="head-search-bar" type="text" name="s" placeholder="검색하기 ">
-
             </div>
             <script>
+                let searchToggle = false
                 $(function(){
-                    $('#search>a').click(function(){
-                        
+                    $(".head-search").hide()
+                    
+
+                    $(".icon li:first-child").click(function(){
+                        searchToggle ? $(".head-search").hide() : $(".head-search").show()
+                        searchToggle = !searchToggle
                     });
                 });
             </script>
