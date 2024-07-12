@@ -41,7 +41,7 @@ $(function () {
 });
 //  서브페이지 메인내비
 
-//슬라이드
+//슬라이드------//
 function slide(e) {
     // 클래스가 "scroll_on"인 모든 요소를 선택합니다.
     const $counters = $(e);
@@ -71,11 +71,14 @@ function slide(e) {
         });
     }).scroll();
 };
+//슬라이드----------//
 //서브페이지1-1-1 메인내용// 
 $(function () {
     slide('.content_header');
 });
-
+$(function () {
+    slide('.content_header-2');
+});
 $(function () {
     slide('.content_section');
 });
@@ -92,8 +95,21 @@ $(function () {
     slide('.third-content-section');
 });
 // 서브페이지 1-1-2 메인내용
+//서브페이지 1-2-1 메인내용
+$(function () {
+    slide('.content-first');
+});
+$(function () {
+    slide('.content-second');
+});
+$(function () {
+    slide('.content-third');
+});
+$(function () {
+    slide('#down');
+});
+//서브페이지 1-2-1 메인내용
 
-//슬라이드
 // 검색바
 let searchToggle = false
 $(function(){

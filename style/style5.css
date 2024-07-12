@@ -375,7 +375,7 @@ ul.icon li a img:last-child
 /* 서브페이지의 메인 내비 */
 .main-content {
     width: 100%;
-    height: 1500px;
+    height: 2500px;
     margin: 0 auto;
     padding: 0px 12px;
     position: relative;
@@ -504,105 +504,136 @@ a.main-nav-title {
     opacity: 1 !important;
     transform: translate(-100px, 0) !important;
 }
-
-.content_section {
-    top: 450px;
-    left: 500px;
+.content_header-2 {
+    left: 100px;
     position: relative;
     opacity: 0;
-    transition: all 1s;
-    width: 450px;
+    transition: all 1.5s;
 }
 
-.content_section.active {
+.content_header-2.active {
     opacity: 1 !important;
-    transform: translate(0, -100) !important;
+    transform: translate(-100px, 0) !important;
 }
+
+
 
 .content {
     width: 100%;
     height: 100%;
 }
 /* 서브페이지1-1-1 메인내용 */
-/* 서브페이지1-1-2 메인내용시작*/
-.main-content{
-    height: 1800px;
-}
-.first-content-section-wrap {
+/* 서브페이지1-2-1 메인내용시작*/
+.content_section {
     position: relative;
-    height: 600px;
-    width: 900px;
+    width: 920px;
+    height: 320px;
+    margin-top: 50px;
+    display: block;
 }
 
-.first-content-section {
+.content-first {
     position: absolute;
-    margin-top: 100px;
-    background-color: black;
-    height: 600px;
-    width: 900px;
+    left: 100px;
+    width: 320px;
+    height: 320px;
+    border-radius: 100%;
+    background: #6375b7;
+    z-index: 1;
+    text-align: center;
     opacity: 0;
     transition: all 1s;
-    left: 100px;
-    margin: 50px 0 0 0;
 }
 
-.first-content-section.active {
-    opacity: 1 !important;
-    transform: translate(-100px, 0) !important;
+.content-second {
+    position: absolute;
+    left: 400px;
+    width: 320px;
+    height: 320px;
+    border-radius: 100%;
+    background: #6592c0;
+    z-index: 2;
+    text-align: center;
+    opacity: 0;
+    transition: all 1s;
+    transition-delay: 400ms;
 }
 
-.first-content-section>h1 {
-    position: relative;
-    margin: 160px 0px 0px 40px;
-    font-size: 40px;
-    font-weight: 700;
+.content-third {
+    position: absolute;
+    left: 700px;
+    width: 320px;
+    height: 320px;
+    border-radius: 100%;
+    background: #65b4c0;
+    z-index: 3;
+    text-align: center;
+    opacity: 0;
+    transition: all 1s;
+    transition-delay: 800ms;
 }
 
-.first-content-section>p {
-    font-size: 20px;
+.content-first-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 70%;
     color: white;
-    margin: 50px 40px 30px 40px;
+    font-weight: bold;
 }
 
-#first-content-border-box {
-    position: relative;
-    right: 20px;
-    bottom: 150px;
-    border-right: 5px solid white;
-    height: 200px;
+.content-second-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 70%;
+    color: white;
+    font-weight: bold;
 }
 
-.second-content-section>h6 {
-    color: #333;
+.content-third-text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    height: 70%;
+    color: white;
+    font-weight: bold;
 }
 
-.second-content-section {
-    position: relative;
-    width: 900px;
-    height: 300px;
-    opacity: 0;
-    transition: all 1s;
-    left: 100px;
-}
-
-.second-content-section.active {
-    opacity: 1 !important;
-    transform: translate(-100px, 0) !important;
-}                
-.third-content-section {
-    position: relative;
-    width: 900px;
-    height: 300px;
-    opacity: 0;
-    transition: all 1s;
-    left: 100px;
-}
-
-.third-content-section.active {
+.content-first.active {
     opacity: 1 !important;
     transform: translate(-100px, 0) !important;
 }
-/* 서브페이지1-1-2 메인내용끝 */
+
+.content-second.active {
+    opacity: 1 !important;
+    transform: translate(-100px, 0) !important;
+}
+
+.content-third.active {
+    opacity: 1 !important;
+    transform: translate(-100px, 0) !important;
+}
+#down{
+    position: absolute;
+    left: 440px;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 1s;
+
+}
+#down.active {
+    opacity: 1 !important;
+    transform: translate(0, 200px) !important;
+}
+/* 서브페이지1-2-1 메인내용끝 */
 /* 푸터 */
 footer
 {
