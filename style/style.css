@@ -758,7 +758,8 @@ p{
     margin-left: -30px;
     transform: translateX(60px);
     position: relative;
-    left: 30%;
+    left: 10%;
+    opacity: 0;
 }
 .list li .item
 {
@@ -825,12 +826,28 @@ p{
     color: white;
 }
 
-.animate .list li:nth-of-type(1) .item
+.animate li:nth-of-type(1)
 {
-    transition: all 0.5s;
+    transition: all 1s;
     transition-delay: 0ms;
     left: 0%;
+    opacity: 1;
 }
+.animate li:nth-of-type(2)
+{
+    transition: all 1s;
+    transition-delay: 100ms;
+    left: 0%;
+    opacity: 1;
+}
+.animate li:nth-of-type(3)
+{
+    transition: all 1s;
+    transition-delay: 200ms;
+    left: 0%;
+    opacity: 1;
+}
+
 
 #page3
 {
