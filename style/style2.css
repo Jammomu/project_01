@@ -307,13 +307,14 @@ ul.icon li a img:last-child
     padding: 0 12px;
 }
 /* 헤드 부분 */
+
 /* 검색바 */
 .head-search {
 
     width: 100%;
     height: 80px;
     background-color: white;
-    text-align: right;
+    text-align: center;
     display: none;
 }
 .head-search-bar {
@@ -325,10 +326,10 @@ ul.icon li a img:last-child
     transition: all 0.5s;
     text-align: right;
     height: 100%;
-    padding-right: 20%;
     border: 0px;
     outline: none;
     z-index: 100;
+    padding: 0 12px;
 }
 /* 검색바 */
 
