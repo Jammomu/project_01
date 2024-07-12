@@ -332,33 +332,51 @@
                             height: 100%;
                         }
 
-                        .content-fivth-first {
+                        .content-fiveth-first {
                             position: relative;
                             width: 900px;
                             height: 500px;
                             top: 50px;
                             overflow: hidden;
                             border-bottom: 1px solid #dee2e6;
+                            opacity: 0;
+                            transition: all 1.5s;
                         }
 
-                        .content-fivth-second {
+                        .content-fiveth-first.active {
+                            animation: scale-in-ver-center .5s cubic-bezier(.25, .46, .45, .94) both;
+                        }
+
+                        .content-fiveth-second {
                             position: relative;
                             width: 900px;
                             height: 500px;
                             top: 50px;
                             overflow: hidden;
                             border-bottom: 1px solid #dee2e6;
+                            opacity: 0;
+                            transition: all 1.5s;
                         }
+                        .content-fiveth-second.active {
+                            animation:scale-in-ver-center .5s cubic-bezier(.25,.46,.45,.94) both;
+                         }
 
-                        .content-fivth-third {
+
+
+                        .content-fiveth-third {
                             position: relative;
                             width: 900px;
                             height: 500px;
                             top: 50px;
                             overflow: hidden;
+                            opacity: 0;
+                            transition: all 1.5s;
                         }
+                        .content-fiveth-third.active {
+                            animation:scale-in-ver-center .5s cubic-bezier(.25,.46,.45,.94) both;
+                         }
 
-                        .fivth-left-text {
+                        .fiveth-left-text {
                             width: 300px;
                             position: relative;
                             top: 100px;
@@ -373,11 +391,22 @@
                             float: right;
                             font-size: 18px;
                         }
-                        @keyframes scale-in-ver-center{0%{transform:scaleY(0);opacity:1}100%{transform:scaleY(1);opacity:1}}
+
+                        @keyframes scale-in-ver-center {
+                            0% {
+                                transform: scaleY(0);
+                                opacity: 1
+                            }
+
+                            100% {
+                                transform: scaleY(1);
+                                opacity: 1
+                            }
+                        }
                     </style>
-                    <div class="content-fivth">
-                        <div class="content-fivth-first">
-                            <div class="fivth-left-text">
+                    <div class="content-fiveth">
+                        <div class="content-fiveth-first">
+                            <div class="fiveth-left-text">
                                 <h2>
                                     <border style="border-top: 3px solid;">당</border>신의 생각에</h1>
                                     <h2><strong>도전하는 기업가치</strong></h1>
@@ -391,8 +420,8 @@
                                     코자인이 되겠습니다.</p>
                             </div>
                         </div>
-                        <div class="content-fivth-second">
-                            <div class="fivth-left-text">
+                        <div class="content-fiveth-second">
+                            <div class="fiveth-left-text">
                                 <h2>
                                     <border style="border-top: 3px solid;">생</border>각에 공감하며</h1>
                                     <h2><strong>상생하는 기업가치</strong></h1>
@@ -404,8 +433,8 @@
                                     기반으로 함께하는 파트너가 되어야 한다는 것입니다. 비즈니스를 함께 디자인 해야한다는 코자인의 철학을 언제나 실천하는 코자인이 되겠습니다.</p>
                             </div>
                         </div>
-                        <div class="content-fivth-third">
-                            <div class="fivth-left-text">
+                        <div class="content-fiveth-third">
+                            <div class="fiveth-left-text">
                                 <h2>
                                     <border style="border-top: 3px solid;">당</border>신의 생각을</h1>
                                     <h2><strong>존중하는 기업가치</strong></h1>
@@ -421,6 +450,17 @@
                         </div>
 
                     </div>
+                    <script>
+                        $(function () {
+                            slide('.content-fiveth-first');
+                        });
+                        $(function () {
+                            slide('.content-fiveth-second');
+                        });
+                        $(function () {
+                            slide('.content-fiveth-third');
+                        });
+                    </script>
                 </div>
 
             </div>
