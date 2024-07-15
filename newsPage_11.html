@@ -127,7 +127,7 @@
         <div class="head">
           <!-- 로고영역 시작 -->
           <div class="logo">
-            <a href="#">
+            <a href="./index.html">
               <img src="./img/logo_white.png" alt="">
             </a>
           </div>
@@ -137,22 +137,22 @@
           <div class="head-menu">
             <ul class="head-main-menu">
               <li>
-                <a href="#"> 메인페이지 </a>
+                <a href="./index.html"> 메인페이지 </a>
               </li>
               <li>
-                <a href="#"> 회사소개 </a>
+                <a href="./sub-page1-1-1.html"> 회사소개 </a>
                 <ul class="head-sub-menu">
-                  <li><a href="#"> 회사소개 </a>
+                  <li><a href="./sub-page1-1-1.html"> 회사소개 </a>
                     <ul class="head-sub-menu-sub">
-                      <li><a href="#"> 회사소개 스타일1 </a></li>
-                      <li><a href="#"> 회사소개 스타일2 </a></li>
-                      <li><a href="#"> 회사소개 스타일3 </a></li>
+                      <li><a href="./sub-page1-1-1.html"> 회사소개 스타일1 </a></li>
+                      <li><a href="./sub-page1-1-2.html"> 회사소개 스타일2 </a></li>
+                      <li><a href="./sub-page1-1-3.html"> 회사소개 스타일3 </a></li>
                     </ul>
                   </li>
-                  <li><a href="#"> 회사비전 </a>
+                  <li><a href="./sub-page1-2-1.html"> 회사비전 </a>
                     <ul class="head-sub-menu-sub">
-                      <li><a href="#"> 회사비전 스타일1 </a></li>
-                      <li><a href="#"> 회사비전 스타일2 </a></li>
+                      <li><a href="./sub-page1-2-1.html"> 회사비전 스타일1 </a></li>
+                      <li><a href="./sub-page1-2-2.html"> 회사비전 스타일2 </a></li>
                     </ul>
                   </li>
                   <li><a href="#"> 회사연혁 </a></li>
@@ -161,32 +161,32 @@
                 </ul>
               </li>
               <li>
-                <a href="#"> 제품서비스 </a>
+                <a href="./productPage.html"> 제품서비스 </a>
                 <ul class="head-sub-menu">
-                  <li><a href="#"> 서비스소개</a>
+                  <li><a href="./productPage.html"> 서비스소개</a>
                     <ul class="head-sub-menu-sub">
-                      <li><a href="#"> 서비스소개 스타일1 </a></li>
-                      <li><a href="#"> 서비스소개 스타일2 </a></li>
+                      <li><a href="./productPage.html"> 서비스소개 스타일1 </a></li>
+                      <li><a href="./productPage_1_2.html"> 서비스소개 스타일2 </a></li>
                       <li><a href="#"> 서비스소개 스타일3 </a></li>
                     </ul>
                   </li>
-                  <li><a href="#"> 제품안내</a>
+                  <li><a href="./productPage_2_1.html"> 제품안내</a>
                     <ul class="head-sub-menu-sub">
-                      <li><a href="#"> 제품안내 스타일1 </a></li>
+                      <li><a href="./productPage_2_1.html"> 제품안내 스타일1 </a></li>
                     </ul>
                   </li>
                 </ul>
               </li>
               <li>
-                <a href="#"> 갤러리 </a>
+                <a href="./gallery.html"> 갤러리 </a>
                 <ul class="head-sub-menu">
-                  <li><a href="#"> 갤러리 스타일1</a></li>
-                  <li><a href="#"> 갤러리 스타일2</a></li>
-                  <li><a href="#"> 갤러리 스타일3</a></li>
+                  <li><a href="./gallery.html"> 갤러리 스타일1</a></li>
+                  <li><a href="./gallery.html"> 갤러리 스타일2</a></li>
+                  <li><a href="./gallery.html"> 갤러리 스타일3</a></li>
                 </ul>
               </li>
               <li>
-                <a href="#"> 뉴스센터 </a>
+                <a href="./newsPage_11.html"> 뉴스센터 </a>
                 <ul class="head-sub-menu">
                   <li><a href="#"> 고객센터</a></li>
                   <li><a href="#"> 미디어</a></li>
@@ -241,16 +241,24 @@
   <!-- 제품 서비스 페이지 -->
   <div id="productSurvice">
     <!-- 왼쪽 메뉴 -->
-    <div id="leftMenuZone">
-      <div id="head-sub-menu">
-        <ul>
-          <li><a href="#" class="active">고객센터</a></li>
-          <li><a href="#" class="active">미디어</a></li>
-          <li><a href="#" class="active">자주묻는 질문</a></li>
-          <li><a href="#" class="active">Contect Us</a></li>
-        </ul>
-      </div>
-    </div>
+    <div style="position: relative;  top:20px;" class="main-nav">
+      <ul class="main-nav-index">
+          <a href="./sub-page1-1-1.html" class="main-nav-title"><br>회사소개</a>
+          <ul style="margin: 0; padding: 0;">
+              <li class="main-nav-box this-page nav-main"><a href="./sub-page1-1-1.html">고객센터</a></li>
+          </ul>
+          <ul id="nav-second" style="margin: 0; padding: 0;">
+              <li class="main-nav-box nav-main not-select"><a href="./sub-page1-2-1.html">미디어</a></li>
+          </ul>
+          <li class="main-nav-box nav-main not-select"><a href="#">자주묻는 질문</a></li>
+          <li class="main-nav-box nav-main not-select"><a href="#">Contact Us</a></li>
+      </ul>
+
+
+      
+      
+  </div>
+
     <!-- 컨텐츠존 -->
     <div id="contentZone">
       <!-- 컨텐츠 네비 -->
@@ -464,6 +472,48 @@
   </div>
   </div>
   </div>
+          <!-- 푸터 시작 -->
+          <link rel="stylesheet" href="./style/footer.css">
+          <footer>
+              <div class="footertarget"></div>
+  
+              <div class="footer-wrap">
+                  <div class="footer-contents">
+                      <div class="footer-logo">
+                          <img src="./img/logo_black-1.png" alt="">
+                      </div>
+                      <div class="footer-row">
+  
+                          <div class="footer-top">
+                              <div class="footer-col">
+                                  <ul class="footer-menu">
+                                      <li><a href="#">개인정보처리방침</a></li>
+                                      <li><a href="#">이메일무단수집거부</a></li>
+                                      <li><a href="#">이용약관</a></li>
+                                      <li><a href="#">통신판매신고번호: 제 2020-서울특별시-1419호</a></li>
+                                  </ul>
+  
+                                  <ul class="footer-sns">
+                                      <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+                                      <li><a href="#"><i class="bi bi-youtube"></i></a></li>
+                                      <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+                                      <li><a href="#"><i class="bi bi-line"></i></a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                          <div class="footer-box">
+                              <address>
+                                  그라피코스 스튜디오 서울사무실 사무실장 신영빈 사업자등록번호 117-13-49878
+                              </address>
+                              <p>서울시 노원구 공릉2동 26-21 제1실습관 507호 코자인 스튜디오 Tel. 070-7566-1666 E-mail. touchxe@gmail.com</p>
+                          </div>
+  
+                          <p>Copyright © 2021 그라피코스 All Rights Reserved.</p>
+                      </div>
+                  </div>
+              </div>
+          </footer>
+          <!-- 푸터 끝 -->
 </body>
 
 </html>
