@@ -25,7 +25,7 @@
 }
 
 
-/* 헤드 부분 */
+/* head 수정본 */
 *{
     margin: 0;
     padding: 0;
@@ -283,55 +283,8 @@ ul.icon li a img:last-child
 {
     display: none;
 }
-.head-search {
+/* head 수정본 */
 
-    width: 100%;
-    height: 80px;
-    background-color: white;
-    text-align: center;
-    display: block;
-}
-
-.head-search-bar {
-    font-size: 1.8rem;
-    line-height: 5rem;  
-    width: 100%;
-    text-indent: 2rem;
-    /* transition: all 0.5s; */
-    text-align: right;
-    height: 100%;
-    border: 0px;
-    outline: none;
-    z-index: 100;
-    margin: 0 auto;
-    padding: 0 12px;
-}
-/* 헤드 부분 */
-
-/* 검색바 */
-.head-search {
-
-    width: 100%;
-    height: 80px;
-    background-color: white;
-    text-align: center;
-    display: none;
-}
-.head-search-bar {
-    position: relative;
-    font-size: 1.8rem;
-    line-height: 5rem;  
-    width: 100%;
-    text-indent: 2rem;
-    transition: all 0.5s;
-    text-align: right;
-    height: 100%;
-    border: 0px;
-    outline: none;
-    z-index: 100;
-    padding: 0 12px;
-}
-/* 검색바 */
 
 
 /* 반응형 개조 */
@@ -355,7 +308,7 @@ ul.icon li a img:last-child
     {
         display: flex;
     }
-    nav,#main-title-area,.main-content,.footer-wrap, .head-search-bar
+    nav,#main-title-area,.main-content,.footer-wrap
     {
         max-width: 720px;
     }
@@ -363,7 +316,7 @@ ul.icon li a img:last-child
 }
 
 @media (min-width: 992px){
-    nav,#main-title-area,.main-content,.footer-wrap, .head-search-bar
+    nav,#main-title-area,.main-content,.footer-wrap
     {
         max-width: 960px;
     }
@@ -373,14 +326,14 @@ ul.icon li a img:last-child
     }
 }
 @media (min-width: 1200px){
-    nav,#main-title-area,.main-content,.footer-wrap, .head-search-bar
+    nav,#main-title-area,.main-content,.footer-wrap
     {
         max-width: 1140px;
     }
 
 }
 @media (min-width: 1400px){
-    nav,#main-title-area,.main-content,.footer-wrap, .head-search-bar
+    nav,#main-title-area,.main-content,.footer-wrap
     {
         max-width: 1320px;
     }
@@ -422,7 +375,7 @@ ul.icon li a img:last-child
 /* 서브페이지의 메인 내비 */
 .main-content {
     width: 100%;
-    height: 1300px;
+    height: 2500px;
     margin: 0 auto;
     padding: 0px 12px;
     position: relative;
@@ -499,7 +452,7 @@ a.main-nav-title {
     border: 3px solid #676ba7;
 }
 
-/* 서브페이지의 메인 내비 */
+/* 서브페이지의 메인 내비 끝*/
  /* breadcrumb시작 */
  .breadcrumb {
     margin-top: 40px;
@@ -551,26 +504,28 @@ a.main-nav-title {
     opacity: 1 !important;
     transform: translate(-100px, 0) !important;
 }
-
-.content_section {
-    top: 450px;
-    left: 500px;
+.content_header-2 {
+    left: 100px;
     position: relative;
     opacity: 0;
-    transition: all 1s;
-    width: 450px;
+    transition: all 1.5s;
 }
 
-.content_section.active {
+.content_header-2.active {
     opacity: 1 !important;
-    transform: translate(0, -100) !important;
+    transform: translate(-100px, 0) !important;
 }
+
+
 
 .content {
     width: 100%;
     height: 100%;
 }
 /* 서브페이지1-1-1 메인내용 */
+/* 서브페이지1-2-2 메인내용시작*/
+
+/* 서브페이지1-2-2 메인내용끝 */
 /* 푸터 */
 footer
 {
@@ -680,56 +635,27 @@ p{
 }
 
 /* 푸터 */
-/* 반응형 개조 */
-@media (max-width: 710px)
-{
-    #main-title-area{
-        display: none;
-    }
-}
+/* 검색바 */
+.head-search {
 
-@media (min-width: 576px)
-{
-    
-    nav
-    {
-        max-width: 540px;
-    }
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    text-align: center;
+    display: none;
 }
-@media (min-width: 768px){
-    ul.head-main-menu
-    {
-        display: flex;
-    }
-    nav,#main-title-area,.main-content,.footer-wrap
-    {
-        max-width: 720px;
-    }
-
+.head-search-bar {
+    position: relative;
+    font-size: 1.8rem;
+    line-height: 5rem;  
+    width: 100%;
+    text-indent: 2rem;
+    transition: all 0.5s;
+    text-align: right;
+    height: 100%;
+    border: 0px;
+    outline: none;
+    z-index: 100;
+    padding: 0 12px;
 }
-
-@media (min-width: 992px){
-    nav,#main-title-area,.main-content,.footer-wrap
-    {
-        max-width: 960px;
-    }
-    ul.icon
-    {
-        display: flex;
-    }
-}
-@media (min-width: 1200px){
-    nav,#main-title-area,.main-content,.footer-wrap
-    {
-        max-width: 1140px;
-    }
-
-}
-@media (min-width: 1400px){
-    nav,#main-title-area,.main-content,.footer-wrap
-    {
-        max-width: 1320px;
-    }
-    
-}
-
+/* 검색바 */

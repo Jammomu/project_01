@@ -116,7 +116,8 @@
 
         /* 컨텐츠 타이틀 스타일 */
         #content_title{
-            margin: 25px 0;
+            margin-top: 25px;
+            margin-bottom: 100px;
         }
         #content_title > h2{
             font-weight: 600;
@@ -136,63 +137,68 @@
 
         /* 컨텐츠 메뉴 스타일 */
         #content_menu{
+            width: 100%;
+            height: 100%;
             margin-top: 50px;
-        }
-
-        .whiteBox{
-            width: 30%;
-            height: 170px;
-            margin-bottom: 80px;
-            border: 1px solid #ddd;
-            display: flex;
-            justify-content: right;
-            align-items: end;
-            float: left;
             position: relative;
         }
-        .boxInfo{
-            width: 190px;
-            padding: 20px 20px 10px 20px;
-            margin-left: -200px;
-            margin-top: -70px;
-            background-color: #000;
-            color: #fff;
-            position: absolute;
-            align-items: center;
+
+        .content_paragraph{
+            width: 100%;
+            height: 30%;
+            margin-bottom: 50px;
+            border-bottom: 2px solid #000;
+            display: block;
         }
-        .boxInfo > h6{
-            font-size: 16px;
+        .content_paragraph img{
+            width: 30%;
+            display: block;
         }
-        .boxInfo > p{
-            color: #aaa;
+
+        .txt_overline{
+            width: 20px;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #000;
         }
-        .content_menu_txt{
-            width: 60%;
-            margin-left: 60px;
-            float: right;
-            margin-bottom: 60px;
+        .txt_overline2{
+            width: 20px;
+            margin: 15px;
+            border-bottom: 3px solid #000;
         }
-        .content_menu_txt > h3{
+
+        .txt_style3{
+            width: 50%;
+            display: block;
+            float: left;
+        }
+        .txt_style3 > h3{
             font-weight: 600;
+        }
+        .txt_style3 > p{
+            margin-bottom: 50px;
+        }
+
+        button.btn01{
+            width: 170px;
+            padding: 5px;
+            padding-left: 25px;
+            margin-right: 30px;
+            margin-bottom: 30px;
+            background-color: #fff;
+            color: #000;
+            border: 1px solid #222;
+            border-radius: 25px;
+            text-align: left;
+        }
+
+        .content_whiteBox{
+            width: 20%;
+            display: block;
         }
     </style>
 
     <!-- 컨텐츠 이벤트 스타일 -->
     <style>
-        /* 
-        #content_menu{
-            opacity: 0; /* 초기 상태를 투명하게 설정
-            transition: opacity 2.5s; /* 페이드 인/아웃 애니메이션
-        }
-        #content_menu.fade-in {
-            opacity: 1; /* 페이드 인 상태
-        }
-
-        #content_menu.fade-out {
-            opacity: 0; /* 페이드 아웃 상태
-        }
-        */
-        
         .content_paragraph {
             opacity: 0;
             transition: opacity 1s ease-in-out;
@@ -200,26 +206,15 @@
         .content_paragraph.visible {
             opacity: 1;
         }
+
+        button.btn01:hover{
+            background-color: #000;
+            color: #fff;
+        }
     </style>
     
     <!-- 이벤트 스크립트 -->
     <script>
-        // document.addEventListener('DOMContentLoaded', (event) => {
-        //     fadeIn();
-        // });
-
-        // function fadeIn(){
-        //     const element = document.getElementById('content_menu');
-        //     element.classList.remove('fade-out');
-        //     element.classList.add('fade-in');
-        // }
-
-        // function fadeOut(){
-        //     const element = document.getElementById('content_menu');
-        //     element.classList.remove('fade-in');
-        //     element.classList.add('fade-out');
-        // }
-        
         document.addEventListener("DOMContentLoaded", () => {
             const items = document.querySelectorAll('.content_paragraph');
 
@@ -298,7 +293,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="#"> 제품서비스 </a>
+                                <a href="./productPage.html"> 제품서비스 </a>
                                 <ul class="head-sub-menu">
                                     <li><a href="./productPage.html"> 서비스소개</a>
                                         <ul class="head-sub-menu-sub">
@@ -307,9 +302,9 @@
                                             <li><a href="#"> 서비스소개 스타일3 </a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#"> 제품안내</a>
+                                    <li><a href="./productPage_2_1.html"> 제품안내</a>
                                         <ul class="head-sub-menu-sub">
-                                            <li><a href="#"> 제품안내 스타일1 </a></li>
+                                            <li><a href="./productPage_2_1.html"> 제품안내 스타일1 </a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -336,7 +331,7 @@
     
                         <!-- 아이콘영역 시작 -->
                         <ul class="icon">
-                            <li><a id="search" href="#"> 
+                            <li><a href="#"> 
                                 <img src="https://mwpdemo12348.mycafe24.com/wp-content/themes/ktheme_biz_fabric/images/icon_search.svg" alt=""> 
                                 <img src="https://mwpdemo12348.mycafe24.com/wp-content/themes/ktheme_biz_fabric/images/icon_search_black.svg" alt="">
                             </a></li>
@@ -357,9 +352,7 @@
             <!-- 헤드영역 끝 -->
 
             <!-- 검색 시작 -->
-            <div class="head-search"> 
-                <input class="head-search-bar" type="text" name="s" placeholder="검색하기 ">
-            </div>
+            <div class="head-search"></div>
                 
             <!-- 토글메뉴 시작 -->
             <div class="head-toggle-menu"></div>
@@ -381,18 +374,18 @@
 
         <!-- 왼쪽 메뉴 -->
         <div id="main-content">
-            <div class="main-nav" style="z-index: 1;">
+            <div class="main-nav">
                 <ul class="main-nav-index">
                     <a href="./productPage.html" class="main-nav-title"><br>제품서비스</a>
                     <ul style="margin: 0; padding: 0;">
-                        <li class="main-nav-box this-page nav-main"><a href="#">서비스소개 +</a></li>
-                        <li class="main-nav-box"><a id="this-page" href="./productPage.html" style="color: #676ba7;">서비스소개 스타일1</a></li>
-                        <li class="main-nav-box"><a href="./productPage_1_2.html">서비스소개 스타일2</a></li>
-                        <li class="main-nav-box"><a href="#">서비스소개 스타일3</a></li>
+                        <li class="main-nav-box nav-main not-select"><a href="./productPage.html">서비스소개 +</a></li>
+                        <li class="main-nav-box hidden"><a  href="./productPage.html">서비스소개 스타일1</a></li>
+                        <li class="main-nav-box hidden"><a href="./productPage_1_2.html">서비스소개 스타일2</a></li>
+                        <li class="main-nav-box hidden"><a href="#">서비스소개 스타일3</a></li>
                     </ul>
                     <ul id="nav-second" style="margin: 0; padding: 0;">
-                        <li class="main-nav-box nav-main not-select"><a href="#">제품안내 +</a></li>
-                        <li class="main-nav-box hidden"><a href="#">제품안내 스타일1</a></li>
+                        <li class="main-nav-box nav-main this-page"><a href="./productPage_2_1.html">제품안내 +</a></li>
+                        <li class="main-nav-box"><a href="./productPage_2_1.html" id="this-page" style="color: #676ba7;">제품안내 스타일1</a></li>
                     </ul>
                 </ul>
             </div>
@@ -403,103 +396,36 @@
             <!-- 컨텐츠 네비 -->
             <div id="content_nav">
                 <ul>
-                    <li><a href="./index.html"><img src="img/home.png" alt=""></a></li>
+                    <li><a href="#"><img src="img/home.png" alt=""></a></li>
                     <li><a href="./productPage.html"><img src="img/arrow.png" alt=""> 제품서비스</a></li>
-                    <li><a href="./productPage.html"><img src="img/arrow.png" alt=""> 서비스소개</a></li>
-                    <li><a href="./productPage.html"><img src="img/arrow.png" alt=""> 서비스소개 스타일1</a></li>
+                    <li><a href="./productPage.html"><img src="img/arrow.png" alt=""> 제품안내</a></li>
+                    <li><a href="./productPage_1_2.html"><img src="img/arrow.png" alt=""> 제품안내 스타일2</a></li>
                 </ul>
             </div>
             <!-- 컨텐츠 타이틀 -->
-            <div id="content_title"><h2>서비스소개 스타일1</h2></div>
+            <div id="content_title"><h2>제품안내 스타일1</h2></div>
             <div id="content_menu">
-
                 <!-- 컨텐츠 메뉴1 -->
                 <div class="content_paragraph">
-                    <!-- 컨텐츠 왼쪽 상자 -->
-                    <div class="whiteBox">
-                        <a href="#">
-                            <div class="boxInfo">
-                                <h6>영국 SILVERTOWN</h6>
-                                <p>2032.08.28</p>
-                            </div>
-                        </a>
+                    <!-- 컨텐츠 왼쪽 텍스트 -->
+                    <div class="content_menu_txt txt_style3">
+                        <div class="txt_overline"></div>
+                        <h3>갤럭시 Z 폴드3 5G</h3>
+                        <p>갤럭시 폴드 사상 가장 얇고 휴대성이 뛰어난 동시에, 외부와 내부 모두에 풀스크린 디스플레이를 탑재했습니다. 접으면 일반 스마트폰처럼 한 손에 쏙 들어오지만 펼치면 광활한 시야가 당신의 것이 되죠.</p>
+                        <div>
+                            <button class="btn01">제품스팩</button>
+                            <button class="btn01">카달로그</button>
+                        </div>
                     </div>
-                    <!-- 컨텐츠 우측 텍스트 -->
-                    <div class="content_menu_txt">
-                        <h3>ECO Business</h3>
-                        <p>Resource Circularity를 기반으로 한 3R (Reduce : 소각ㆍ매립, Reuse : 수처리, Recycle : Wasted Material) 중심의 Waste to Resource 사업을 실행하는 종합 환경 Platform으로 성장을 지속하고 있습니다.</p>
-                        <ul>
-                            <li>친환경 관리솔루션 E/C분야 1위</li>
-                            <li>투자개발 12,000억원</li>
-                        </ul>
-                    </div>
+                    <!-- 컨텐츠 오른쪽 사진 -->
+                    <img src="./img/picture_250x250.png" alt="">
                 </div>
-                
-                <!-- 컨텐츠 메뉴2 -->
-                <div class="content_paragraph">
-                    <!-- 컨텐츠 왼쪽 상자 -->
-                    <div class="whiteBox">
-                        <a href="#">
-                            <div class="boxInfo">
-                                <h6>싱가포르 JAC</h6>
-                                <p>2032.08.28</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- 컨텐츠 우측 텍스트 -->
-                    <div class="content_menu_txt">
-                        <h3>환경기초시설</h3>
-                        <p>각은 폐기물의 부피를 감소시키고, 유해성을 안정화시키는 가장 직접적인 방법입니다. 소각을 통해 버려지는 폐기물을 저감하고, 환경을 위한 에너지로 전환하고 있습니다. 지역 주민에게 냉난방과 전기를 공급하고 있으며, 엄격한 오염물질의 관리를 통해 지역 사회의 신뢰성을 구축하고 있습니다.</p>
-                        <ul>
-                            <li>상세보기</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- 컨텐츠 메뉴3 -->
-                <div class="content_paragraph">
-                    <!-- 컨텐츠 왼쪽 상자 -->
-                    <div class="whiteBox">
-                        <a href="#">
-                            <div class="boxInfo">
-                                <h6>인도네시아 L프로젝트</h6>
-                                <p>2032.08.28</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- 컨텐츠 우측 텍스트 -->
-                    <div class="content_menu_txt">
-                        <h3>EMC 사업영역</h3>
-                        <p>시설에 대한 장기적인 관리 관점에서 잠재적인 영향성을 차단하고, 미래 세대를 위해 지역 환경을 안전하게 보존하고 있습니다. 매립 폐기물의 적정 처리와 관리 시스템을 통해 폐기물의 친환경적 자원 순환을 선도하겠습니다.</p>
-                        <ul>
-                            <li>친환경 관리솔루션 E/C분야 1위</li>
-                            <li>투자개발 12,000억원</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- 컨텐츠 메뉴4 -->
-                <div class="content_paragraph">
-                    <!-- 컨텐츠 왼쪽 상자 -->
-                    <div class="whiteBox">
-                        <a href="#">
-                            <div class="boxInfo">
-                                <h6>영월 연료전지 1단계</h6>
-                                <p>2032.08.28</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- 컨텐츠 우측 텍스트 -->
-                    <div class="content_menu_txt">
-                        <h3>OTO Platform</h3>
-                        <p>업전략과 연계된 R&D 전략을 수립하고 친환경 기술/정책/시장 동향을 분석하여 R&D 포트폴리오를 구축하고 있으며, 요소기술에 대한 기술/시장 분석을 토대로 기술로드맵을 수립하고 있습니다.</p>
-                        <ul>
-                            <li>SV11 Power Tower 1 Project</li>
-                            <li>2020.12 ~ 2021.12</li>
-                            <li>규모 - 4.0MW</li>
-                        </ul>
-                    </div>
-                </div>
+            </div>
+            <!-- 중앙 상자들 -->
+            <div class="content_whiteBox">
+                <img src="./img/home.png" alt="">
+                <div class="txt_overline2"></div>
+                <h5>갤럭시 Z폴드3 블랙</h5>
             </div>
         </div>
     </div>
@@ -507,7 +433,7 @@
                 <footer style="z-index: -1;">
                     <div class="footertarget"></div>
                     
-                    <div class="footer-wrap" >
+                    <div class="footer-wrap">
                         <div class="footer-contents">
                             <div class="footer-logo">
                                 <img src="./img/logo_black-1.png" alt="">
