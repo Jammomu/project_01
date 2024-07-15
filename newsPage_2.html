@@ -67,7 +67,7 @@
         #head-sub-menu-sub > li{
             display: none;
         }
-        #head-sub-menu-sub> li > a:hover{
+        #head-sub-menu-sub > li > a:hover{
             color: #676BA7;
         }
         #head-sub-menu > li > a.active{
@@ -237,19 +237,6 @@
                             </li>
                         </ul>
                         <!-- 영역 끝 -->
-    
-                        <!-- 아이콘영역 시작 -->
-                        <ul class="icon">
-                            <li><a href="#"> 
-                                <img src="https://mwpdemo12348.mycafe24.com/wp-content/themes/ktheme_biz_fabric/images/icon_search.svg" alt=""> 
-                                <img src="https://mwpdemo12348.mycafe24.com/wp-content/themes/ktheme_biz_fabric/images/icon_search_black.svg" alt="">
-                            </a></li>
-                            <li><a href="#"> 
-                                <img src="https://mwpdemo12348.mycafe24.com/wp-content/themes/ktheme_biz_fabric/images/icon_full_menu.svg" alt="">
-                                <img src="https://mwpdemo12348.mycafe24.com/wp-content/themes/ktheme_biz_fabric/images/icon_full_menu_black.svg" alt="">
-                            </a></li>
-                        </ul>
-                        <!-- 아이콘영역 끝 -->
 
                     </div>
                     <!-- 메뉴영역 끝 -->
@@ -271,136 +258,299 @@
     </div>
     <!-- 상단영역 끝 -->
          
-    <!-- 제품 서비스 페이지 -->
-    <div id="productSurvice">
-        <!-- 왼쪽 메뉴 -->
-        <div id="leftMenuZone">
-            <!-- <div id="left_nav">
-                <div id="left_nav_title">
-                    <h1><a href="#">제품서비스</a></h1>
-                </div>
-            </div> -->
+    <!-- 뉴스센터 페이지 -------------------------------------------------------------------->
+    <style>
+       .aside>ul>li {
+          list-style: none;
+        }
+    
+        #newsCenter {
+          margin: 0 auto;
+          position: relative;
+          overflow: hidden;
+          width: 1200px;
+        }
+     
+        #contentZone {
+    
+          overflow: hidden;
+          right: 50px;
+        }
+    
+        a {
+          text-decoration: none;
+        }
+      </style>
+   <div id="newsCenter">
+    <style>
 
-            <ul id="head-sub-menu">
-                <li><a href="#" class="active">서비스소개</a>
-                    <ul id="head-sub-menu-sub">
-                        <li><a href="#"> 서비스소개 스타일1 </a></li>
-                        <li><a href="#"> 서비스소개 스타일2 </a></li>
-                        <li><a href="#"> 서비스소개 스타일3 </a></li>
-                    </ul>
-                </li>
-                <li><a href="#">제품안내</a>
-                    <ul id="head-sub-menu-sub">
-                        <li><a href="#"> 제품안내 스타일1 </a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
+    </style>
+    <!-- 왼쪽 사이드바 시작 -->
+    <div id="leftMenuZone">
+      <style>
+        .aside {
+          padding: 10px;
+          float: left;
+          line-height: 100%;
+          top: 0px;
+        }
 
-        <!-- 컨텐츠존 -->
-        <div id="contentZone">
-            <!-- 컨텐츠 네비 -->
-            <div id="content_nav">
-                <ul>
-                    <li><a href="#"><img src="img/home.png" alt=""></a></li>
-                    <li><a href="#"><img src="img/arrow.png" alt=""> 제품서비스</a></li>
-                    <li><a href="#"><img src="img/arrow.png" alt=""> 서비스소개</a></li>
-                    <li><a href="#"><img src="img/arrow.png" alt=""> 서비스소개 스타일1</a></li>
-                </ul>
-            </div>
-            <!-- 컨텐츠 타이틀 -->
-            <div id="content_title"><h2>서비스소개 스타일1</h2></div>
-            <div id="content_menu">
+        .aside>ul>li {
+          margin: 2px;
+          padding: 25px 20px;
+          width: 250px;
+          background-color: rgb(234, 234, 235);
+          font-size: 16px;
+        }
+      </style>
+      <div class="aside">
+        <ul>
+          <li><a href="#">고객센터</a></li>
+          <li><a href="#">미디어</a></li>
+          <li><a href="#">자주묻는 질문</a></li>
+          <li><a href="#">Contect Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- 왼쪽사이드바 끝 -->
+    <!-- 본문 큰박스 시작 -->
+    <div id="contentZone">
+      <style>
+        #contentZone{
+          position: relative;
+          overflow: hidden;
+        }
+      </style>
+      <!-- 오른쪽 미니 네비게이션 시작 -->
+      <div class="first_gnb">
+        <ul>
+          <li><a href="#">home</a></li>
+          <li><a href="#">뉴스센터</a></li>
+          <li><a href="#">고객센터</a></li>
+        </ul>
+      </div>
+      <!-- 오른쪽 미니 네비게이션 끝 -->
+      <!-- 본문 타이틀 시작 -->
+       <style>
+        .content_title{
+          margin-top: 30px;
+          margin-left: 10px;
+          left: 40px;
+          font-size: 24px;
+          font-weight: bold;
+          color: rgb(68, 68, 68);
+          overflow: hidden;
+          position: relative;
+        }
+       </style>
+      <div class="content_title">
+        <p>고객센터</p>
+      </div>
+      <!-- 본문 타이틀 끝 -->
+      <!-- 본문 큰 카테고리 시작 -->
+      <style>
+        .first_gnb {
+          position: absolute;
+          right: 30px;
+        }
 
-                <!-- 컨텐츠 메뉴1 -->
-                <div id="content_paragraph">
-                    <!-- 컨텐츠 왼쪽 상자 -->
-                    <div id="whiteBox">
-                        <a href="#">
-                            <div id="boxInfo">
-                                <h6>영국 SILVERTOWN</h6>
-                                <p>2032.08.28</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- 컨텐츠 우측 텍스트 -->
-                    <div id="content_menu_txt">
-                        <h3>ECO Business</h3>
-                        <p>Resource Circularity를 기반으로 한 3R (Reduce : 소각ㆍ매립, Reuse : 수처리, Recycle : Wasted Material) 중심의 Waste to Resource 사업을 실행하는 종합 환경 Platform으로 성장을 지속하고 있습니다.</p>
-                        <ul>
-                            <li>친환경 관리솔루션 E/C분야 1위</li>
-                            <li>투자개발 12,000억원</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- 컨텐츠 메뉴2 -->
-                <div id="content_paragraph">
-                    <!-- 컨텐츠 왼쪽 상자 -->
-                    <div id="whiteBox">
-                        <a href="#">
-                            <div id="boxInfo">
-                                <h6>싱가포르 JAC</h6>
-                                <p>2032.08.28</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- 컨텐츠 우측 텍스트 -->
-                    <div id="content_menu_txt">
-                        <h3>환경기초시설</h3>
-                        <p>각은 폐기물의 부피를 감소시키고, 유해성을 안정화시키는 가장 직접적인 방법입니다. 소각을 통해 버려지는 폐기물을 저감하고, 환경을 위한 에너지로 전환하고 있습니다. 지역 주민에게 냉난방과 전기를 공급하고 있으며, 엄격한 오염물질의 관리를 통해 지역 사회의 신뢰성을 구축하고 있습니다.</p>
-                        <ul>
-                            <li>상세보기 <img src="" alt=""></li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- 컨텐츠 메뉴3 -->
-                <div id="content_paragraph">
-                    <!-- 컨텐츠 왼쪽 상자 -->
-                    <div id="whiteBox">
-                        <a href="#">
-                            <div id="boxInfo">
-                                <h6>인도네시아 L프로젝트</h6>
-                                <p>2032.08.28</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- 컨텐츠 우측 텍스트 -->
-                    <div id="content_menu_txt">
-                        <h3>EMC 사업영역</h3>
-                        <p>시설에 대한 장기적인 관리 관점에서 잠재적인 영향성을 차단하고, 미래 세대를 위해 지역 환경을 안전하게 보존하고 있습니다. 매립 폐기물의 적정 처리와 관리 시스템을 통해 폐기물의 친환경적 자원 순환을 선도하겠습니다.</p>
-                        <ul>
-                            <li>친환경 관리솔루션 E/C분야 1위</li>
-                            <li>투자개발 12,000억원</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- 컨텐츠 메뉴4 -->
-                <div id="content_paragraph">
-                    <!-- 컨텐츠 왼쪽 상자 -->
-                    <div id="whiteBox">
-                        <a href="#">
-                            <div id="boxInfo">
-                                <h6>영월 연료전지 1단계</h6>
-                                <p>2032.08.28</p>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- 컨텐츠 우측 텍스트 -->
-                    <div id="content_menu_txt">
-                        <h3>OTO Platform</h3>
-                        <p>업전략과 연계된 R&D 전략을 수립하고 친환경 기술/정책/시장 동향을 분석하여 R&D 포트폴리오를 구축하고 있으며, 요소기술에 대한 기술/시장 분석을 토대로 기술로드맵을 수립하고 있습니다.</p>
-                        <ul>
-                            <li>SV11 Power Tower 1 Project</li>
-                            <li>2020.12 ~ 2021.12</li>
-                            <li>규모 – 4.0MW</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        .first_gnb>ul>li {
+          float: left;
+          font-size: 13px;
+          padding: 5px;
+          line-height: 100%;
+        }
+
+        .kategorie>ul>li {
+          float: left;
+          padding: 10px;
+          font-size: 20px;
+          font-weight: bold;
+          color: rgb(129, 129, 129);
+          margin-bottom: 20px;
+
+        }
+      </style>
+      <div id="kategorie_wrap">
+        <div class="kategorie">
+          <ul>
+            <li>ALL</li>
+            <li>회사소식</li>
+            <li>스튜디오</li>
+            <li>인재</li>
+          </ul>
         </div>
     </div>
+      <!-- 본문 큰 카테고리 끝 -->
+      <!-- 본문 작은 카테고리 시작 -->
+      <div class="board-list">
+         <style>
+       .board-list{
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        left: 10px;
+        margin-bottom: 15px;
+        
+       }
+       .total-board{
+        float: left;
+        margin-left: 40px;
+        font-size: 17px;
+       }
+       .left-checkbox{
+        float: right;
+        margin-right: 40px;
+       }
+
+         </style>
+        <div class="total-board">
+          Total
+          <span>14</span>
+          건
+        </div>
+        <div class="left-checkbox">
+          <form action="check" >
+            <input type="hidden">
+            <input type="hidden">
+            <input type="hidden">
+            <select name="" id="">
+              <option value="">Newest</option>
+              <option value="">Best</option>
+              <option value="">Viewed</option>
+              <option value="">Updated</option>
+            </select>
+          </form>
+        </div>
+      </div>
+      <!-- 본문 작은 카테고리 끝 -->
+    </div>
+    <!-- 고객센터 테이블 시작 -->
+    <div class="news-table">
+      <table>
+        <style>
+          table{
+            width: 700px;
+            height: 700px;
+            border-top: 1px solid gray;
+            border-collapse: collapse;
+            text-align: center;     
+          }
+
+         tr, td{
+            border-bottom: 2px solid rgb(238, 237, 237);
+          }
+          </style>
+        <thead>
+          <tr style="background-color: rgb(243, 243, 243); height: 50px; font-weight: bold;
+          color: rgb(129, 129, 129);">
+            <td class="board-list-first">Number</td>
+            <td class="board-list title">Title</td>
+            <td class="board-list-user">Author</td>
+            <td class="board-list-data">Data</td>
+            <td class="board-list-vote">Votes</td>
+            <td class="board-list-view">Views</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="board-list-first">Notice</td>
+            <td class="board-list title">??</td>
+            <td class="board-list-user">그라피코스</td>
+            <td class="board-list-data">2021.11.18</td>
+            <td class="board-list-vote">0</td>
+            <td class="board-list-view">122</td>
+          </tr>
+          <tr>
+            <td class="board-list-first">12</td>
+            <td class="board-list title">??</td>
+            <td class="board-list-user">그라피코스</td>
+            <td class="board-list-data">2021.11.18</td>
+            <td class="board-list-vote">0</td>
+            <td class="board-list-view">122</td>
+          </tr>
+          <tr>
+            <td class="board-list-first">11</td>
+            <td class="board-list title">??</td>
+            <td class="board-list-user">그라피코스</td>
+            <td class="board-list-data">2021.11.18</td>
+            <td class="board-list-vote">0</td>
+            <td class="board-list-view">122</td>
+          </tr>
+          <tr>
+            <td class="board-list-first">10</td>
+            <td class="board-list title">??</td>
+            <td class="board-list-user">그라피코스</td>
+            <td class="board-list-data">2021.11.18</td>
+            <td class="board-list-vote">0</td>
+            <td class="board-list-view">122</td>
+          </tr>
+          <tr>
+            <td class="board-list-first">9</td>
+            <td class="board-list title">??</td>
+            <td class="board-list-user">그라피코스</td>
+            <td class="board-list-data">2021.11.18</td>
+            <td class="board-list-vote">0</td>
+            <td class="board-list-view">122</td>
+          </tr>
+          <tr>
+            <td class="board-list-first">8</td>
+            <td class="board-list title">??</td>
+            <td class="board-list-user">그라피코스</td>
+            <td class="board-list-data">2021.11.18</td>
+            <td class="board-list-vote">0</td>
+            <td class="board-list-view">122</td>
+          </tr>
+          <tr>
+            <td class="board-list-first">7</td>
+            <td class="board-list title">??</td>
+            <td class="board-list-user">그라피코스</td>
+            <td class="board-list-data">2021.11.18</td>
+            <td class="board-list-vote">0</td>
+            <td class="board-list-view">122</td>
+          </tr>
+          <tr>
+            <td class="board-list-first">6</td>
+            <td class="board-list title">??</td>
+            <td class="board-list-user">그라피코스</td>
+            <td class="board-list-data">2021.11.18</td>
+            <td class="board-list-vote">0</td>
+            <td class="board-list-view">122</td>
+          </tr>
+          <tr>
+            <td class="board-list-first">5</td>
+            <td class="board-list title">??</td>
+            <td class="board-list-user">그라피코스</td>
+            <td class="board-list-data">2021.11.18</td>
+            <td class="board-list-vote">0</td>
+            <td class="board-list-view">122</td>
+          </tr>
+          <tr>
+            <td class="board-list-first">4</td>
+            <td class="board-list title">??</td>
+            <td class="board-list-user">그라피코스</td>
+            <td class="board-list-data">2021.11.18</td>
+            <td class="board-list-vote">0</td>
+            <td class="board-list-view">122</td>
+          </tr>
+          <tr>
+            <td class="board-list-first">3</td>
+            <td class="board-list title">??</td>
+            <td class="board-list-user">그라피코스</td>
+            <td class="board-list-data">2021.11.18</td>
+            <td class="board-list-vote">0</td>
+            <td class="board-list-view">122</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- 고객센터 테이블 끝 -->
+    </div>
+    <!-- 왼쪽 사이드바옆의 본문 끝 -->
+    <div class="searching"></div>
+    <div class="page-move-list"></div>
+    <div class="poweredbykboard"></div>
+
+  </div>
+  </div>
 </body>
 </html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NewsCenter</title>
+  <script src="js/jquery.min.js"></script>
+  <style>
+    body{
+      margin: 0 auto;
+    }
+    li {
+      list-style: none;
+    }
+    #newsCenter {
+      margin: 0 auto;
+      position: relative;
+      overflow: hidden;
+      width: 1200px;
+    }
+    #contentZone {
+      overflow: hidden;
+      right: 50px;
+    }
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="newsCenter">
+    <style>
+
+    </style>
+    <!-- 왼쪽 사이드바 시작 -->
+    <div id="leftMenuZone">
+      <style>
+        .aside {
+          padding: 10px;
+          float: left;
+          line-height: 100%;
+          top: 0px;
+        }
+
+        .aside>ul>li {
+          margin: 2px;
+          padding: 25px 20px;
+          width: 250px;
+          background-color: rgb(234, 234, 235);
+          font-size: 16px;
+        }
+      </style>
+      <div class="aside">
+        <ul>
+          <li><a href="#">고객센터</a></li>
+          <li><a href="#">미디어</a></li>
+          <li><a href="#">자주묻는 질문</a></li>
+          <li><a href="#">Contect Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <!-- 왼쪽사이드바 끝 -->
+    <!-- 본문 큰박스 시작 -->
+    <div id="contentZone">
+      <style>
+        #contentZone{
+          position: relative;
+          overflow: hidden;
+        }
+      </style>
+      <!-- 오른쪽 미니 네비게이션 시작 -->
+      <div class="first_gnb">
+        <ul>
+          <li><a href="#">home</a></li>
+          <li><a href="#">뉴스센터</a></li>
+          <li><a href="#">고객센터</a></li>
+        </ul>
+      </div>
+      <!-- 오른쪽 미니 네비게이션 끝 -->
+      <!-- 본문 타이틀 시작 -->
+       <style>
+        .content_title{
+          margin-top: 30px;
+          margin-left: 10px;
+          left: 40px;
+          font-size: 24px;
+          font-weight: bold;
+          color: rgb(68, 68, 68);
+          overflow: hidden;
+          position: relative;
+        }
+       </style>
+      <div class="content_title">
+        <p>고객센터</p>
+      </div>
+      <!-- 본문 타이틀 끝 -->
+      <!-- 본문 큰 카테고리 시작 -->
+      <style>
+        .first_gnb {
+          position: absolute;
+          right: 30px;
+        }
+
+        .first_gnb>ul>li {
+          float: left;
+          font-size: 13px;
+          padding: 5px;
+          line-height: 100%;
+        }
+
+        .kategorie>ul>li {
+          float: left;
+          padding: 10px;
+          font-size: 20px;
+          font-weight: bold;
+          color: rgb(129, 129, 129);
+          margin-bottom: 20px;
+
+        }
+      </style>
+      <div id="kategorie_wrap">
+        <div class="kategorie">
+          <ul>
+            <li>ALL</li>
+            <li>회사소식</li>
+            <li>스튜디오</li>
+            <li>인재</li>
+          </ul>
+        </div>
+    </div>
+      <!-- 본문 큰 카테고리 끝 -->
+      <!-- 본문 작은 카테고리 시작 -->
+      <div class="board-list">
+         <style>
+       .board-list{
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        left: 10px;
+        margin-bottom: 15px;
+        
+       }
+       .total-board{
+        float: left;
+        margin-left: 40px;
+        font-size: 17px;
+       }
+       .left-checkbox{
+        float: right;
+        margin-right: 13%;
+       }
+
+         </style>
+        <div class="total-board">
+          Total
+          <span>14</span>
+          건
+        </div>
+        <div class="left-checkbox">
+          <form action="check" >
+            <input type="hidden">
+            <input type="hidden">
+            <input type="hidden">
+            <select name="" id="">
+              <option value="">Newest</option>
+              <option value="">Best</option>
+              <option value="">Viewed</option>
+              <option value="">Updated</option>
+            </select>
+          </form>
+        </div>
+      </div>
+      <!-- 본문 작은 카테고리 끝 -->
+    </div>
+    <!-- 고객센터 테이블 시작 -->
+    <div class="news-table">
+      <table>
+        <style>
+          table{
+            width: 700px;
+            height: 700px;
+            border-top: 1px solid gray;
+            border-collapse: collapse;
+            text-align: center;     
+          }
+
+         tr, td{
+            border-bottom: 2px solid rgb(238, 237, 237);
+          }
+          </style>
+        <thead>
+          <tr style="background-color: rgb(243, 243, 243); height: 50px; font-weight: bold;
+          color: rgb(129, 129, 129);">
+            <td class="board-list-first">Number</td>
+            <td class="board-list title">Title</td>
+            <td class="board-list-user">Author</td>
+            <td class="board-list-data">Data</td>
+            <td class="board-list-vote">Votes</td>
+            <td class="board-list-view">Views</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="board-list-first">Notice</td>
+            <td class="board-list title">??</td>
+            <td class="board-list-user">그라피코스</td>
+            <td class="board-list-data">2021.11.18</td>
+            <td class="board-list-vote">0</td>
+            <td class="board-list-view">122</td>
+          </tr>
+          <tr>
+            <td class="board-list-first">12</td>
+            <td class="board-list title">??</td>
+            <td class="board-list-user">그라피코스</td>
+            <td class="board-list-data">2021.11.18</td>
+            <td class="board-list-vote">0</td>
+            <td class="board-list-view">122</td>
+          </tr>
+          <tr>
+            <td class="board-list-first">11</td>
+            <td class="board-list title">??</td>
+            <td class="board-list-user">그라피코스</td>
+            <td class="board-list-data">2021.11.18</td>
+            <td class="board-list-vote">0</td>
+            <td class="board-list-view">122</td>
+          </tr>
+          <tr>
+            <td class="board-list-first">10</td>
+            <td class="board-list title">??</td>
+            <td class="board-list-user">그라피코스</td>
+            <td class="board-list-data">2021.11.18</td>
+            <td class="board-list-vote">0</td>
+            <td class="board-list-view">122</td>
+          </tr>
+          <tr>
+            <td class="board-list-first">9</td>
+            <td class="board-list title">??</td>
+            <td class="board-list-user">그라피코스</td>
+            <td class="board-list-data">2021.11.18</td>
+            <td class="board-list-vote">0</td>
+            <td class="board-list-view">122</td>
+          </tr>
+          <tr>
+            <td class="board-list-first">8</td>
+            <td class="board-list title">??</td>
+            <td class="board-list-user">그라피코스</td>
+            <td class="board-list-data">2021.11.18</td>
+            <td class="board-list-vote">0</td>
+            <td class="board-list-view">122</td>
+          </tr>
+          <tr>
+            <td class="board-list-first">7</td>
+            <td class="board-list title">??</td>
+            <td class="board-list-user">그라피코스</td>
+            <td class="board-list-data">2021.11.18</td>
+            <td class="board-list-vote">0</td>
+            <td class="board-list-view">122</td>
+          </tr>
+          <tr>
+            <td class="board-list-first">6</td>
+            <td class="board-list title">??</td>
+            <td class="board-list-user">그라피코스</td>
+            <td class="board-list-data">2021.11.18</td>
+            <td class="board-list-vote">0</td>
+            <td class="board-list-view">122</td>
+          </tr>
+          <tr>
+            <td class="board-list-first">5</td>
+            <td class="board-list title">??</td>
+            <td class="board-list-user">그라피코스</td>
+            <td class="board-list-data">2021.11.18</td>
+            <td class="board-list-vote">0</td>
+            <td class="board-list-view">122</td>
+          </tr>
+          <tr>
+            <td class="board-list-first">4</td>
+            <td class="board-list title">??</td>
+            <td class="board-list-user">그라피코스</td>
+            <td class="board-list-data">2021.11.18</td>
+            <td class="board-list-vote">0</td>
+            <td class="board-list-view">122</td>
+          </tr>
+          <tr>
+            <td class="board-list-first">3</td>
+            <td class="board-list title">??</td>
+            <td class="board-list-user">그라피코스</td>
+            <td class="board-list-data">2021.11.18</td>
+            <td class="board-list-vote">0</td>
+            <td class="board-list-view">122</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- 고객센터 테이블 끝 -->
+    </div>
+    <!-- 왼쪽 사이드바옆의 본문 끝 -->
+    <div class="searching"></div>
+    <div class="page-move-list"></div>
+    <div class="poweredbykboard"></div>
+
+  </div>
+  </div>
+</body>
+
+</html>
