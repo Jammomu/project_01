@@ -46,8 +46,6 @@ $(document).ready(function () {
         $(this).siblings().removeClass("on")
     })
 
-
-
     for (let index = 0; index < btnMenu.length; index++) {
         btnMenu.eq(index).click(function () {
             pageIndex = index
@@ -81,6 +79,7 @@ $(document).ready(function () {
         $(this).children().last().stop().fadeOut(200)
     })
 
+    //넒이에 따른 화면위치 조정
     $( window ).resize(function() {
         if($( window ).width() < 768)
         {
@@ -120,9 +119,8 @@ $(document).ready(function () {
         }
     })
 
-
+    //원페이지 스크롤링
     window.addEventListener("wheel", function(e){
-        
         isWheel = $("html").width() > 768 && 
         parseFloat(scroll.css("transform").split(',')[5]
         .replace(/[^0-9.]/g,'')).toFixed(0) == 
@@ -160,6 +158,7 @@ $(document).ready(function () {
         
         
     },{passive : false});
+    
 })
 
 function movepage(params) {
@@ -184,7 +183,6 @@ function BtnMenu() {
                 btnMenu.eq(index).removeClass("on")
             }
         }
-
     }
 }
 
@@ -219,8 +217,6 @@ const pageObserver = new IntersectionObserver(function (entries) {
             {
                 $(entry.target).parent().addClass("animate")
             }
-            // 
-            
             if($("html").width() < 768)
             {
                 if(entry.intersectionRatio > 0.5)
@@ -228,7 +224,6 @@ const pageObserver = new IntersectionObserver(function (entries) {
 
                 console.log(entry.intersectionRatio)
             }
-
             if(entry.intersectionRatio > 0.5)
             {
                 newind = parseInt($(entry.target).parent().attr('id').replace(/[^0-9]/g,'')) - 1
@@ -239,15 +234,11 @@ const pageObserver = new IntersectionObserver(function (entries) {
                     newind > 0 ? $(".top").hide() : $(".top").show();
                 }
             }
-            
-
-
             if(!screenOld)
             {
                 pageIndex = newind
             }
             // console.log(pageIndex)
-
         }
         else
         {
@@ -280,17 +271,14 @@ $(function () {
         $(this).css('color', 'black');
     });
 });
-// 메인 내비 끝
 
 // 검색바
 let searchToggle = false
 $(function(){
     $(".head-search").hide()
-    
 
     $(".icon li:first-child").click(function(){
         searchToggle ? $(".head-search").hide() : $(".head-search").show()
         searchToggle = !searchToggle
     });
 });
-// 검색바
