@@ -1,8 +1,32 @@
 import '../styles/subPage2_1_1.css';
 import { subPage2_1_2 } from './subPage2_1_2';
 import { subPage2_2_1 } from './subPage2_2_1';
+import { useEffect } from 'react';
 
 export function subPage2_1_1() {
+  useEffect(()=>{
+    const items = document.querySelectorAll('.content_paragraph');
+    const observerOptions = {
+      threshold: 0.1
+    }
+    const observerCallback = (entries, observer)=>{
+      entries.forEach(entry => {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    items.forEach(item => {
+      observer.observe(item);
+    });
+
+    return ()=>{
+      items.forEach(item => {
+        observer.unobserve(item);
+      });
+    }
+  }, []);
 
   return (
     <>
@@ -40,6 +64,11 @@ export function subPage2_1_1() {
           {/* <!-- 컨텐츠 타이틀 --> */}
           <div id="content_title"><h2>서비스소개 스타일1</h2></div>
           <div id="content_menu">
+
+            {/* 여기에 .content_paragraph 클래스를 가진 요소들을 추가하세요 */}
+            <p className="content_paragraph">Paragraph 1</p>
+            <p className="content_paragraph">Paragraph 2</p>
+            <p className="content_paragraph">Paragraph 3</p>
 
             {/* <!-- 컨텐츠 메뉴1 --> */}
             <div className="content_paragraph">
