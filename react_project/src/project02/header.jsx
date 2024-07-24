@@ -1,7 +1,8 @@
-import './style/header.css';
+import { useState } from 'react';
 import logoWhite from './img/logo_white.png';
 import { MyComponent } from './img/Arrowdown';
 export function Header() {
+
   return (
     <>
       <header>
@@ -28,9 +29,9 @@ export function Header() {
                             </li>
                             <li>
                                 <a href="./sub-page1-1-1.html"> 회사소개 <MyComponent/> </a>
-                                <ul class="head-sub-menu">
+                                <ul class='head-sub-menu'>
                                     <li><a href="./sub-page1-1-1.html"> 회사소개 </a>
-                                        <ul class="head-sub-menu-sub">
+                                        <ul class='head-sub-menu-sub'>
                                             <li><a href="./sub-page1-1-1.html"> 회사소개 스타일1 </a></li>
                                             <li><a href="./sub-page1-1-2.html"> 회사소개 스타일2 </a></li>
                                             <li><a href="./sub-page1-1-3.html"> 회사소개 스타일3 </a></li>
