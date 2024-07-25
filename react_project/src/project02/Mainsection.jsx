@@ -17,7 +17,13 @@ export function MainSection ({ exposurePercentage = 100, loop = true })  {
           rect.bottom >= (contentHeight * exposurePercentage / 100)
         ) {
           el.classList.add('active');
+<<<<<<< HEAD
         } 
+=======
+        } else if (loop) {
+          el.classList.remove('active');
+        }
+>>>>>>> 5a9f4d53a2d6c7bc7f9e0f8e7ed8b19f0ac7a348
       });
     };
 
@@ -46,15 +52,25 @@ export function MainSection ({ exposurePercentage = 100, loop = true })  {
   };
 
   return (
+<<<<<<< HEAD
     <div className="main-section">
       <div className="content">
         <div className="content_header scroll_on" style={contentHeaderStyle}>
+=======
+    <div className="main-section scroll_on">
+      <div className="content">
+        <div className="content_header" style={contentHeaderStyle}>
+>>>>>>> 5a9f4d53a2d6c7bc7f9e0f8e7ed8b19f0ac7a348
           <h1 style={headingStyle}>사람과 더불어 살아가야하는 세상을 만들고</h1>
           <h2 style={subheadingStyle}>
             함께 나누는 그라피코스 입니다. 현재에 안주하지 않으며 언제나 변화와 차별화, 창의적인 디자인을 향해 도전하고 있습니다.
           </h2>
         </div>
+<<<<<<< HEAD
         <div className="content_section scroll_on">
+=======
+        <div className="content_section">
+>>>>>>> 5a9f4d53a2d6c7bc7f9e0f8e7ed8b19f0ac7a348
           <h2>그라피코스 설립이념</h2>
           <p>
             <strong>그라피코스 디자인</strong>은 과거와 현재에 안주하지 않으며 언제나 변화와 차별화, 창의적인 디자인을 향해 도전하고 있습니다. 역동적인 디자인과 심플한 기능성으로 사용자의
