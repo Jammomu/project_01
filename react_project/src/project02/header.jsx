@@ -2,25 +2,6 @@ import { useState } from 'react';
 import logoWhite from './img/logo_white.png';
 import { MyComponent } from './img/Arrowdown';
 export function Header() {
-<<<<<<< HEAD
-=======
-  const [isHovered, setIsHovered] = useState(false);
-  const [subHovered, setSubHovered] = useState(false);
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);}
-
-    const subhandleMouseEnter = () => {
-      setSubHovered(true);
-    };
-  
-    const subhandleMouseLeave = () => {
-      setSubHovered(false);}
->>>>>>> 5a9f4d53a2d6c7bc7f9e0f8e7ed8b19f0ac7a348
 
   return (
     <>

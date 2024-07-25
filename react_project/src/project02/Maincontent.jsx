@@ -1,5 +1,5 @@
 import { Bread } from './Bread';
-import { MainNav } from './MainNav';
+import { MainNav } from './mainnav';
 import { MainSection } from './Mainsection';
 import {CompanyIntro} from './contentintro'
 export function MainContent(){
