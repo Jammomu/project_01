@@ -1,0 +1,147 @@
+/* 왼쪽 메뉴 전체 스타일 */
+#main-content{
+  width: 20%;
+  float: left;
+}
+
+/* 왼쪽 메뉴 세부 스타일 */
+a.main-nav-title {
+  width: 300px;
+  height: 150px;
+  position: absolute;
+  background-color: rgb(62 28 106 / 90%);
+  color: white;
+  font-weight: bold;
+  font-size: 2rem;
+  text-align: center;
+  display: block;
+}
+
+.main-nav-box{
+  margin-top: 20px;
+}
+
+.main-nav > li{
+  padding: 10px;
+}
+.main-nav > li > a{
+  padding: 20px 25px;
+  border: 3px solid #f1f1f1;
+  background-color: #f1f1f1;
+  /* border: 2px solid #f55; */
+  margin-bottom: 30px;
+}
+#head-sub-menu-sub1 > li{
+  list-style-image: url('./img/list_style_circle_on.png');
+  font-size: 13px;
+  margin: 10px;
+  /* display: none; */
+}
+#head-sub-menu-sub2 > li{
+  list-style-image: url('./img/list_style_circle_on.png');
+  font-size: 13px;
+  margin: 10px;
+  /* display: none; */
+}
+
+/* 왼쪽 메뉴 이벤트 스타일 */
+.main-nav > li > a:hover{
+  background-color: #fff;
+  border: 3px solid #676BA7;
+  color: #676BA7;
+  display: block;
+}
+#head-sub-menu-sub1 > li > a:hover{
+  color: #676BA7;
+}
+#head-sub-menu-sub2 > li > a:hover{
+  color: #676BA7;
+}
+.main-nav > li > a.active{
+  background-color: #fff;
+  border: 3px solid #676BA7;
+  color: #676BA7;
+  display: block;
+}
+#head-sub-menu-sub1:active{
+  display: block;
+}
+
+/* 컨텐츠 스타일 */
+#contentZone{
+  width: 73%;
+  margin: 0 auto;
+  margin-top: 30px;
+  float: right;
+}
+
+/* 컨텐츠 타이틀 스타일 */
+#content_title{
+  margin: 25px 0;
+}
+#content_title > h2{
+  font-weight: 600;
+}
+
+/* 컨텐츠 네비 스타일 */
+#content_nav{
+  margin-right: 20px;
+  float: right;
+  position: relative;
+}
+#content_nav > ul > li{
+  float: left;
+  margin-left: 15px;
+  font-size: 13px;
+}
+
+/* 컨텐츠 메뉴 스타일 */
+#content_menu{
+  margin-top: 50px;
+}
+
+.whiteBox{
+  width: 30%;
+  height: 170px;
+  margin-bottom: 80px;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: right;
+  align-items: end;
+  float: left;
+  position: relative;
+}
+.boxInfo{
+  width: 190px;
+  padding: 20px 20px 10px 20px;
+  margin-left: -200px;
+  margin-top: -70px;
+  background-color: #000;
+  color: #fff;
+  position: absolute;
+  align-items: center;
+}
+.boxInfo > h6{
+  font-size: 16px;
+}
+.boxInfo > p{
+  color: #aaa;
+}
+.content_menu_txt{
+  width: 60%;
+  margin-left: 60px;
+  float: right;
+  margin-bottom: 60px;
+}
+.content_menu_txt > h3{
+  font-weight: 600;
+}
+
+/* 컨텐츠 이벤트 스타일 */
+.content_paragraph {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.content_paragraph.visible {
+  opacity: 1;
+}

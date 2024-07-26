@@ -6,12 +6,10 @@ export function MainSection1 ({ exposurePercentage = 100, loop = true })  {
   useEffect(() => {
     const handleScroll = () => {
       const counters = document.querySelectorAll('.scroll_on');
-
       counters.forEach((el) => {
         const rect = el.getBoundingClientRect();
         const winHeight = window.innerHeight;
         const contentHeight = rect.bottom - rect.top;
-
         if (
           rect.top <= winHeight - (contentHeight * exposurePercentage / 100) &&
           rect.bottom >= (contentHeight * exposurePercentage / 100)
@@ -20,27 +18,20 @@ export function MainSection1 ({ exposurePercentage = 100, loop = true })  {
         } 
       });
     };
-
     window.addEventListener('scroll', handleScroll);
-
     // 초기 스크롤 위치에서도 체크합니다.
     handleScroll();
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, [exposurePercentage, loop]);
-
-
   const contentHeaderStyle = {
     borderLeft: '4px solid black',
     paddingLeft: '15px'
   };
-
   const headingStyle = {
     marginBottom: '20px'
   };
-
   const subheadingStyle = {
     fontSize: '1.3em'
   };
@@ -86,4 +77,3 @@ export function MainSection1 ({ exposurePercentage = 100, loop = true })  {
     </>
   );
 };
-
