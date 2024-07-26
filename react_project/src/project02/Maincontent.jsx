@@ -1,5 +1,5 @@
 import { Bread } from './Bread';
-import { MainNav } from './MainNav';
+import { MainNav } from './mainnav';
 import { MainSection1 } from './MainSection1';
 import { MainSection2 } from './MainSection2';
 import { MainSection3 } from './MainSection3';
