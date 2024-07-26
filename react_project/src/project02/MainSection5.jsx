@@ -1,5 +1,8 @@
 import { useEffect } from 'react';
 import './style/MainSection5.css';
+import down from './img/icon-down.png'
+import bulb from './img/icon-bulb.png'
+import blackdown from './img/icon-blackdown.png'
 export function MainSection5 ({ exposurePercentage = 100, loop = true })  {
 
 
@@ -32,44 +35,192 @@ export function MainSection5 ({ exposurePercentage = 100, loop = true })  {
   }, [exposurePercentage, loop]);
 
 
-  const contentHeaderStyle = {
-    borderLeft: '4px solid black',
-    paddingLeft: '15px'
-  };
-
-  const headingStyle = {
-    marginBottom: '20px'
-  };
-
-  const subheadingStyle = {
-    fontSize: '1.3em'
-  };
-
   return (
-    <div className="main-section">
-      <div className="content">
-        <div className="content_header scroll_on" style={contentHeaderStyle}>
-          <h1 style={headingStyle}>사람과 더불어 살아가야하는 세상을 만들고</h1>
-          <h2 style={subheadingStyle}>
-            함께 나누는 그라피코스 입니다. 현재에 안주하지 않으며 언제나 변화와 차별화, 창의적인 디자인을 향해 도전하고 있습니다.
-          </h2>
-        </div>
-        <div className="content_section scroll_on">
-          <h2>그라피코스 설립이념</h2>
-          <p>
-            <strong>그라피코스 디자인</strong>은 과거와 현재에 안주하지 않으며 언제나 변화와 차별화, 창의적인 디자인을 향해 도전하고 있습니다. 역동적인 디자인과 심플한 기능성으로 사용자의
-            편의를 만족시켜드립니다.
-          </p>
-          <p>
-            <strong>그라피코스 디자인</strong>은 웹표준을 따르는 작업 프로세스를 통하여 언제 어디서나 편하게 웹 서비스를 이용하실 수 있습니다.
-          </p>
-          <p>
-            웹 비즈니스 업계에서 업무를 진행하면서 많은 실패와 성공을 경험해 왔습니다. 무엇이 성공의 가장 중요한 요소인가? 이 질문이 머리속에 떠오를 때는 언제나 하나의 대답이
-            있었습니다. 신뢰를 기반으로 함께하는 파트너가 되어야 한다는 것입니다. 비즈니스를 함께 디자인 해야한다는 코자인의 철학을 언제나 실천하는 코자인이 되겠습니다.
-          </p>
-        </div>
-      </div>
+    <div class="main-section5">
+    <div class="white-section">
+        <h1 style={{fontSize:'50px'}}>도약의 2021</h1>
+        <h4>그라피코스 <strong>HISTORY</strong></h4>
     </div>
-  );
+
+    <div class="main-content-first scroll_on">
+        <div class="main-content-first-head">
+            <div class="main-first-icon main-icon-box scroll_on">
+                <img class='main-content-icon scroll_on' src="#" alt=" "/>
+                <h2>
+                    <span>그린에너지</span>
+                    <strong>지속사업</strong>
+                </h2>
+            </div>
+
+            <div class="main-second-icon main-icon-box scroll_on">
+                <img class='main-content-icon' src="#" alt=" "/>
+                <h2>
+                    <span>미래천연광물</span>
+                    <strong>개발사업</strong>
+                </h2>
+            </div>
+            <div class="main-third-icon main-icon-box scroll_on">
+                <img class='main-content-icon' src="#" alt=" "/>
+                <h2>
+                    <span>친환경에너지</span>
+                    <strong>미래사업</strong>
+                </h2>
+            </div>
+        </div>
+        <div id="down">
+            <img style={{position: 'relative', left: '47%', top: '50px'}} src={down} alt=""/>
+        </div>
+
+        <div class="main-content-first-body">
+            <h2 style={{color: 'rgba(0, 0, 0, .5)' ,fontSize: '35px'}}><img src={bulb}
+                    alt=""/> 더불어 함께하는 <strong style={{color:'black'}}> 패스파인더기업</strong></h2>
+        </div>
+
+    </div>
+    <div class="main-content-second">
+        <div class='main-content-second-head'>
+            <div class="blackSquare first-Square scroll_on">
+                <div class="text-box">
+                    <h4 style={{fontSize: '1.2rem', borderBottom: '1px solid white', paddingBottom: '5px'}}>
+                        인도네시아 L프로젝트</h4>
+                    <p>2020.08.28</p>
+                </div>
+            </div>
+            <div class="blackSquare second-Square scroll_on">
+                <div class="text-box ">
+                    <h4 style={{fontSize: '1.2rem' ,borderBottom: '1px solid white', paddingBottom: '5px'}}>
+                        쿠알라룸프 L프로젝트</h4>
+                    <p>2020.08.28</p>
+                </div>
+            </div>
+            <div class="blackSquare third-Square scroll_on">
+                <div class="text-box ">
+                    <h4 style={{fontSize: '1.2rem', borderBottom:'1px solid white' ,paddingBottom: '5px'}}>
+                        베트남 호치민</h4>
+                    <p>2021.08.28</p>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="main-content-second-body">
+            <div class="second-body-left">
+                <div class="body-left-wrap">
+                    <h1>
+                        <border style={{borderTop: '1px solid black'}}>그</border>라피코스
+                    </h1>
+                    <h1><strong>기업정보</strong></h1>
+                    <a href="#">공시정보<img src={blackdown}alt=""/></a>
+                </div>
+
+            </div>
+            <style>
+            </style>
+            <div class="second-body-right">
+                <table>
+                    <tr>
+                        <th>회사명</th>
+                        <td>그래피코스 스튜디오</td>
+                    </tr>
+                    <tr>
+                        <th>대표이사</th>
+                        <td>신영빈</td>
+                    </tr>
+                    <tr>
+                        <th>주소</th>
+                        <td>서울시 노원구 공릉2동 117 삼육대학교 창업보육센터 5007</td>
+                    </tr>
+                    <tr>
+                        <th>연락처</th>
+                        <td>대표번호 - 02-6924-3114 , FAX - 070-1548-5184</td>
+                    </tr>
+                    <tr>
+                        <th>재무사항</th>
+                        <td>매출액: 1조 2,826억원</td>
+                    </tr>
+                    <tr>
+                        <th>영업이익</th>
+                        <td>1,598억원 (2020년 K-IFRS 연결 기준)</td>
+                    </tr>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+    <div class="main-content-second">
+        <div class='main-content-second-head'>
+            <div class="blackSquare first-Square scroll_on">
+                <div class="text-box">
+                    <h4 style={{fontSize:'1.2rem' ,borderBottom: '1px solid white', paddingBottom: '5px'}}>
+                        아르헨티나 L프로젝트</h4>
+                    <p>2020.08.28</p>
+                </div>
+            </div>
+            <div class="blackSquare second-Square scroll_on">
+                <div class="text-box ">
+                    <h4 style={{fontSize: '1.2rem', borderBottom: '1px solid white', paddingBottom: '5px'}}>
+                        수단 K프로젝트</h4>
+                    <p>2020.08.28</p>
+                </div>
+            </div>
+            <div class="blackSquare third-Square scroll_on">
+                <div class="text-box ">
+                    <h4 style={{fontSize: '1.2rem', borderBottom: '1px solid white', paddingBottom: '5px'}}>
+                        러시아 모스크바</h4>
+                    <p>2021.08.28</p>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="main-content-second-body">
+            <div class="second-body-left">
+                <div class="body-left-wrap">
+                    <h1>
+                        <border style={{borderTop: '1px solid black'}}>그</border>라피코스
+                    </h1>
+                    <h1><strong>기업정보</strong></h1>
+                    <a href="#">공시정보<img src={blackdown} alt=""/></a>
+                </div>
+
+            </div>
+
+            <div class="second-body-right">
+                <table>
+                    <tr>
+                        <th>회사명</th>
+                        <td>그래피코스 스튜디오</td>
+                    </tr>
+                    <tr>
+                        <th>대표이사</th>
+                        <td>신영빈</td>
+                    </tr>
+                    <tr>
+                        <th>주소</th>
+                        <td>서울시 노원구 공릉2동 117 삼육대학교 창업보육센터 5007</td>
+                    </tr>
+                    <tr>
+                        <th>연락처</th>
+                        <td>대표번호 - 02-6924-3114 , FAX - 070-1548-5184</td>
+                    </tr>
+                    <tr>
+                        <th>재무사항</th>
+                        <td>매출액: 1조 2,826억원</td>
+                    </tr>
+                    <tr>
+                        <th>영업이익</th>
+                        <td>1,598억원 (2020년 K-IFRS 연결 기준)</td>
+                    </tr>
+                </table>
+            </div>
+            
+        </div>
+    </div>
+
+
+</div>  );
 };
 

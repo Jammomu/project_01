@@ -51,7 +51,7 @@ rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.botto
     <div style={containerStyle}>
       <h1 style={headingStyle}>회사소개 스타일3</h1>
     </div>
-    <div className="main-section">
+    <div className="main-section3">
       <div className="main-content-wrap">
         <div className="main-content-section ">
           <div className="thirdpage-left-content scroll_on">

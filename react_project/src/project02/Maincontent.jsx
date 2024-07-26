@@ -5,7 +5,7 @@ import { MainSection2 } from './MainSection2';
 import { MainSection3 } from './MainSection3';
 import { MainSection4 } from './MainSection4';
 import { MainSection5 } from './MainSection5';
-
+import style1 from ''
 
 export function MainContent({mainsection, setMainsection}) {
   const mainsectionpage = () => {
