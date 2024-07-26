@@ -1,0 +1,45 @@
+.main-content-section {
+  width: 100%;
+  height: 100%;
+  margin-top: 00px;
+}
+
+.thirdpage-left-content {
+  float: left;
+  width: 300px;
+  margin-top: 50px;
+  opacity: 0;
+  transition: all 1s;
+  left: 100px;
+  position: relative;
+
+}
+
+.thirdpage-left-content.active {
+  opacity: 1 !important;
+  transform: translate(-100px, 0) !important;
+}
+
+.thirdpage-left-content>h4 {
+  font-size: 30px;
+
+}
+
+.thirdpage-right-content {
+  position: relative;
+  float: right;
+  width: 600px;
+  margin-top: 50px;
+  opacity: 0;
+  transition: all 3s;
+  left: 100px;
+}
+
+.thirdpage-right-content.active {
+  opacity: 1 !important;
+  transform: translate(-100px, 0) !important;
+}
+
+.thirdpage-right-content>p {
+  font-size: 16px;
+}

@@ -1,27 +1,6 @@
-import { useState } from 'react';
 import logoWhite from './img/logo_white.png';
 import { MyComponent } from './img/Arrowdown';
-export function Header() {
-<<<<<<< HEAD
-=======
-  const [isHovered, setIsHovered] = useState(false);
-  const [subHovered, setSubHovered] = useState(false);
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);}
-
-    const subhandleMouseEnter = () => {
-      setSubHovered(true);
-    };
-  
-    const subhandleMouseLeave = () => {
-      setSubHovered(false);}
->>>>>>> 5a9f4d53a2d6c7bc7f9e0f8e7ed8b19f0ac7a348
-
+export function Header({setMainsection}) {
   return (
     <>
       <header>
@@ -47,19 +26,27 @@ export function Header() {
                                 <a href="./index.html"> 메인페이지 </a>
                             </li>
                             <li>
-                                <a href="./sub-page1-1-1.html"> 회사소개 <MyComponent/> </a>
+                                <a href="./sub-page1-1-1.html"   onClick={(event)=>{event.preventDefault(); setMainsection(1)} }
+                                > 회사소개 <MyComponent/> </a>
                                 <ul class='head-sub-menu'>
-                                    <li><a href="./sub-page1-1-1.html"> 회사소개 </a>
+                                    <li><a href="./sub-page1-1-1.html"   onClick={(event)=>{event.preventDefault(); setMainsection(1)} }
+                                    > 회사소개 </a>
                                         <ul class='head-sub-menu-sub'>
-                                            <li><a href="./sub-page1-1-1.html"> 회사소개 스타일1 </a></li>
-                                            <li><a href="./sub-page1-1-2.html"> 회사소개 스타일2 </a></li>
-                                            <li><a href="./sub-page1-1-3.html"> 회사소개 스타일3 </a></li>
+                                            <li><a href="./sub-page1-1-1.html"   onClick={(event)=>{event.preventDefault(); setMainsection(1)} }
+                                            > 회사소개 스타일1 </a></li>
+                                            <li><a href="./sub-page1-1-2.html"   onClick={(event)=>{event.preventDefault(); setMainsection(2)} }
+                                            > 회사소개 스타일2 </a></li>
+                                            <li><a href="./sub-page1-1-3.html"   onClick={(event)=>{event.preventDefault(); setMainsection(3)} }
+                                            > 회사소개 스타일3 </a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="./sub-page1-2-1.html"> 회사비전  </a>
+                                    <li><a href="./sub-page1-2-1.html"   onClick={(event)=>{event.preventDefault(); setMainsection(4)} }
+                                    > 회사비전  </a>
                                         <ul class="head-sub-menu-sub">
-                                            <li><a href="./sub-page1-2-1.html"> 회사비전 스타일1 </a></li>
-                                            <li><a href="#"> 회사비전 스타일2 </a></li>
+                                            <li><a href="./sub-page1-2-1.html"   onClick={(event)=>{event.preventDefault(); setMainsection(4)} }
+                                            > 회사비전 스타일1 </a></li>
+                                            <li><a href="#"   onClick={(event)=>{event.preventDefault(); setMainsection(5)} }
+                                            > 회사비전 스타일2 </a></li>
                                         </ul>
                                     </li>
                                     <li><a href="#"> 회사연혁 </a></li>

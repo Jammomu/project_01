@@ -1,0 +1,83 @@
+/* Mainsection2.module.css */
+.main-section{
+  float: right;
+  position: relative;
+  width: 900px;
+  height: 1300px;
+
+}
+.first-content-section-wrap {
+  position: relative;
+  height: 600px;
+  width: 900px;
+}
+
+.first-content-section {
+  position: absolute;
+  margin-top: 100px;
+  background-color: black;
+  height: 600px;
+  width: 900px;
+  opacity: 0;
+  transition: all 1s;
+  left: 100px;
+  margin: 50px 0 0 0;
+}
+
+.first-content-section.active {
+  opacity: 1 !important;
+  transform: translate(-100px, 0) !important;
+}
+
+.first-content-section>h1 {
+  position: relative;
+  margin: 160px 0px 0px 40px;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.first-content-section>p {
+  font-size: 20px;
+  color: white;
+  margin: 50px 40px 30px 40px;
+}
+
+#first-content-border-box {
+  position: relative;
+  right: 20px;
+  bottom: 150px;
+  border-right: 5px solid white;
+  height: 200px;
+}
+
+.second-content-section>h6 {
+  color: #333;
+}
+
+.second-content-section {
+  position: relative;
+  width: 900px;
+  height: 300px;
+  opacity: 0;
+  transition: all 1s;
+  left: 100px;
+}
+
+.second-content-section.active {
+  opacity: 1 !important;
+  transform: translate(-100px, 0) !important;
+}                
+.third-content-section {
+  position: relative;
+  width: 900px;
+  height: 300px;
+  opacity: 0;
+  transition: all 1s;
+  left: 100px;
+  top: -100px;
+}
+
+.third-content-section.active {
+  opacity: 1 !important;
+  transform: translate(-100px, 0) !important;
+}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-export function MainNav() {
+export function MainNav({setMainsection}) {
   const [isVisionHovered, setIsVisionHovered] = useState(false);
 
   // 회사비전 항목에 마우스 오버 시 상태 업데이트
@@ -31,16 +31,16 @@ export function MainNav() {
         </a>
         <ul style={{ margin: 0, padding: 0 }}>
           <li className="main-nav-box this-page nav-main">
-            <a href="./sub-page1-1-1.html">회사소개 +</a>
+            <a href="./sub-page1-1-1.html" onClick={(event)=>{event.preventDefault(); setMainsection(1)} }>회사소개 +</a>
           </li>
           <li className="main-nav-box">
-            <a id="this-page" style={{ color: '#676ba7' }} href="./sub-page1-1-1.html">회사소개 스타일1</a>
+            <a id="this-page" style={{ color: '#676ba7' }} href="./sub-page1-1-1.html" onClick={(event)=>{event.preventDefault(); setMainsection(1)} }>회사소개 스타일1</a>
           </li>
           <li className="main-nav-box">
-            <a href="./sub-page1-1-2.html">회사소개 스타일2</a>
+            <a href="./sub-page1-1-2.html" onClick={(event)=>{event.preventDefault(); setMainsection(2)} }>회사소개 스타일2</a>
           </li>
           <li className="main-nav-box">
-            <a href="./sub-page1-1-3.html">회사소개 스타일3</a>
+            <a href="./sub-page1-1-3.html" onClick={(event)=>{event.preventDefault(); setMainsection(3)} }>회사소개 스타일3</a>
           </li>
         </ul>
         <ul 
@@ -54,21 +54,21 @@ export function MainNav() {
             onMouseEnter={handleVisionMouseEnter}
             onMouseLeave={handleVisionMouseLeave}
           >
-            <a href="./sub-page1-2-1.html">회사비전 +</a>
+            <a href="./sub-page1-2-1.html" onClick={(event)=>{event.preventDefault(); setMainsection(4)} }>회사비전 +</a>
           </li>
           <li 
             className={`main-nav-box ${isVisionHovered ? '' : 'hidden'}`}
             onMouseEnter={handleSubItemsMouseEnter}
             onMouseLeave={handleSubItemsMouseLeave}
           >
-            <a href="./sub-page1-2-1.html">회사비전 스타일1</a>
+            <a href="./sub-page1-2-1.html" onClick={(event)=>{event.preventDefault(); setMainsection(4)} }>회사비전 스타일1</a>
           </li>
           <li 
             className={`main-nav-box ${isVisionHovered ? '' : 'hidden'}`}
             onMouseEnter={handleSubItemsMouseEnter}
             onMouseLeave={handleSubItemsMouseLeave}
           >
-            <a href="./sub-page1-2-2.html">회사비전 스타일2</a>
+            <a href="./sub-page1-2-2.html"onClick={(event)=>{event.preventDefault(); setMainsection(5)} }>회사비전 스타일2</a>
           </li>
         </ul>
         <li className="main-nav-box nav-main not-select">
