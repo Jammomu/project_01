@@ -50,7 +50,7 @@ export function MainSection1 ({ exposurePercentage = 100, loop = true })  {
     <div style={containerStyle}>
     <h1 style={headingStyle}>회사소개 스타일1</h1>
   </div>
-    <div className="main-section">
+    <div className="main-section1">
       <div className="content">
         <div className="content_header scroll_on" style={contentHeaderStyle}>
           <h1 style={headingStyle}>사람과 더불어 살아가야하는 세상을 만들고</h1>

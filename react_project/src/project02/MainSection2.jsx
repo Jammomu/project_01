@@ -51,7 +51,7 @@ export function MainSection2 ({ exposurePercentage = 100, loop = true })  {
     <div style={containerStyle}>
     <h1 style={headingStyle}>회사소개 스타일2</h1>
   </div>
-<div className="main-section">
+<div className="main-section2">
       <div className="content">
         <div className="content_header scroll_on" style={{ paddingLeft: '15px' }}>
           <h1 style={{ marginBottom: '20px', fontWeight: 'bold' }}>
