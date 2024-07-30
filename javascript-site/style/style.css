@@ -925,9 +925,7 @@ p{
     color: #fff;
 }
 .page-box a:hover
-{
-    transition: all 0.5s;
-
+{    transition: all 0.5s;
     background-color: #8766D5;
     color: #fff;
 }
