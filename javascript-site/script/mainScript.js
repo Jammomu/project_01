@@ -190,6 +190,7 @@ function color(params) {
     if( params == 0 || params == 3)
     {
         btnMenu.parent().removeClass("on")
+        $(".btn-menu").removeClass("btn-menu-color")
         logo.attr("src", "./img/logo_white.png")
         icon.eq(0).attr("src", "https://mwpdemo12348.mycafe24.com/wp-content/themes/ktheme_biz_fabric/images/icon_search.svg")
         icon.eq(1).attr("src", "https://mwpdemo12348.mycafe24.com/wp-content/themes/ktheme_biz_fabric/images/icon_full_menu.svg")
@@ -199,6 +200,7 @@ function color(params) {
     else
     {
         btnMenu.parent().addClass("on")
+        $(".btn-menu").addClass("btn-menu-color")
         logo.attr("src", "./img/logo_black-1.png")
         icon.eq(0).attr("src", "https://mwpdemo12348.mycafe24.com/wp-content/themes/ktheme_biz_fabric/images/icon_search_black.svg")
         icon.eq(1).attr("src", "https://mwpdemo12348.mycafe24.com/wp-content/themes/ktheme_biz_fabric/images/icon_full_menu_black.svg")
